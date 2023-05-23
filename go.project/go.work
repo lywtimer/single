@@ -1,0 +1,10 @@
+go 1.19
+
+use (
+	../micro.service.pb/go
+	./ai
+	./blog
+	./goods
+	./msgo
+	./order
+)
