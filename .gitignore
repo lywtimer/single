@@ -4,3 +4,5 @@ go.project/.idea/
 vue.project/.idea/
 environment/.idea/
 go.project/go.work.sum
+php.project/vendor/
+php.project/composer.lock

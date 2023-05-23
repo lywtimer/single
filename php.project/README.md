@@ -1,5 +1,5 @@
 # memory
-
+composer install #安装依赖
 - 设计思想
     - 依赖倒置原则
 - 探索 web 框架
