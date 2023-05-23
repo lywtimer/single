@@ -2,3 +2,5 @@ java.project/.idea/
 php.project/.idea/
 go.project/.idea/
 vue.project/.idea/
+environment/.idea/
+go.project/go.work.sum
