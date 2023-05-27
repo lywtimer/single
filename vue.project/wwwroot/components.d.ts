@@ -19,6 +19,7 @@ declare module '@vue/runtime-core' {
     InfoHeader: typeof import('./src/components/info/InfoHeader.vue')['default']
     InfoPlayList: typeof import('./src/components/info/InfoPlayList.vue')['default']
     MusicCard: typeof import('./src/components/home/MusicCard.vue')['default']
+    NavButton: typeof import('./src/components/memory/NavButton.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']

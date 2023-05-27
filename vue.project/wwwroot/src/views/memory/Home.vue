@@ -1,32 +1,37 @@
 <template>
-  <div class="navbar">
-      <!-- 导航栏项 -->
-      <div class="nav-items">Nav Item 1</div>
-      <div class="nav-items">Nav Item 2</div>
-      <div class="nav-items">Nav Item 3</div>
-  </div>
+<!--  <div class="navbar">-->
+<!--      &lt;!&ndash; 导航栏项 &ndash;&gt;-->
+<!--      <div class="nav-items">Nav Item 1</div>-->
+<!--      <div class="nav-items">Nav Item 2</div>-->
+<!--      <div class="nav-items">Nav Item 3</div>-->
+<!--  </div>-->
+  <NavButton @click="handleButtonClick">Click Me!</NavButton>
 
-  <div class="main-box">
-    <div class="main-box-item" v-for="i in state.playList">
-      {{i}}
-    </div>
-  </div>
+<!--  <div class="main-box">-->
+<!--    <div class="main-box-item" v-for="i in state.playList">-->
+<!--      {{i}}-->
+<!--    </div>-->
+<!--  </div>-->
 </template>
 
 <script>
-import {reactive} from "vue";
+import { ref } from 'vue';
+import NavButton from '@/components/memory/NavButton.vue';
 
 export default {
-  name: "Home",
+  components: {
+    NavButton,
+  },
   setup() {
-    const state=reactive({
-      playList:[1,2,3,4,5,6,7,8,9,10,11,12,13]
-    });
-    state.playList = Array.from({length:20}, (_, index) => index + 1)
+    const handleButtonClick = () => {
+      // 处理按钮点击事件
+    };
 
-    return {state}
-  }
-}
+    return {
+      handleButtonClick,
+    };
+  },
+};
 
 
 </script>
@@ -74,5 +79,21 @@ export default {
     align-self:  baseline;
   }
 }
+.circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: grab;
+}
 
+.circle-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: auto;
+}
 </style>
