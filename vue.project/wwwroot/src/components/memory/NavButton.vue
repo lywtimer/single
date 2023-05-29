@@ -1,5 +1,10 @@
 <template>
-  <button ref="buttonRef" class="nav-button" @mousedown="handleMouseDown" @mouseup="handleMouseUp" @mousemove="handleMouseMove">
+  <button ref="buttonRef" class="nav-button"
+          @mousedown="handleMouseDown"
+          @mouseup="handleMouseUp"
+          @mousemove="handleMouseMove"
+          @mouseleave="handleMouseLeave"
+  >
     <slot></slot>
   </button>
 </template>
@@ -16,31 +21,36 @@ export default defineComponent({
       y: 0,
     });
     let isDragging = false;
-    let prevMouseX = 0;
-    let prevMouseY = 0;
+    let initialMouseX = 0;
+    let initialMouseY = 0;
+    let initialButtonX = 0;
+    let initialButtonY = 0;
 
     const handleMouseDown = (event) => {
       isDragging = true;
-      prevMouseX = event.clientX;
-      prevMouseY = event.clientY;
-      console.log('handleMouseDown')
+      initialMouseX = event.clientX;
+      initialMouseY = event.clientY;
+      initialButtonX = buttonPosition.x;
+      initialButtonY = buttonPosition.y;
     };
 
     const handleMouseUp = () => {
       isDragging = false;
-      console.log('handleMouseUp')
     };
 
     const handleMouseMove = (event) => {
       if (isDragging) {
-        const deltaX = event.clientX - prevMouseX;
-        const deltaY = event.clientY - prevMouseY;
-        prevMouseX = event.clientX;
-        prevMouseY = event.clientY;
-        buttonPosition.x += deltaX;
-        buttonPosition.y += deltaY;
+        const deltaX = event.clientX - initialMouseX;
+        const deltaY = event.clientY - initialMouseY;
+        buttonPosition.x = initialButtonX + deltaX;
+        buttonPosition.y = initialButtonY + deltaY;
         buttonRef.value.style.transform = `translate(${buttonPosition.x}px, ${buttonPosition.y}px)`;
-        console.log('handleMouseMove')
+      }
+    };
+
+    const handleMouseLeave = () => {
+      if (isDragging) {
+        isDragging = false;
       }
     };
 
@@ -49,6 +59,7 @@ export default defineComponent({
       handleMouseDown,
       handleMouseUp,
       handleMouseMove,
+      handleMouseLeave,
     };
   },
 });
