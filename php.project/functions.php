@@ -3,6 +3,16 @@
 use project\common\LogRuntime;
 use project\common\LogXhprofRuntime;
 
+if (!function_exists('getDays')) {
+    function getDays($start, $end = null)
+    {
+        $startDateTime = date_create(date('Y-m-d', $start));
+        $endDateTime = date_create(date('Y-m-d', is_null($end) ? time() : $end));
+        $interval = date_diff($endDateTime, $startDateTime);
+        return intval($interval->format('%a')) + 1;
+    }
+}
+
 if (!function_exists('dateRangeConflict')) {
     function dateRangeConflict($dateRangeArr)
     {
