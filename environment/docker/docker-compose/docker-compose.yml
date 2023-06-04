@@ -1,0 +1,29 @@
+# 描述 Compose 文件的版本信息
+version: "3.8"
+# 定义服务，可以多个
+services:
+  nginx: # 服务名称
+    image: nginx # 创建容器时所需的镜像
+    container_name: mynginx # 容器名称，默认为"工程名称_服务条目名称_序号"
+    ports: # 宿主机与容器的端口映射关系
+      - "80:80" # 左边宿主机端口:右边容器端口
+    networks: # 配置容器连接的网络，引用顶级 networks 下的条目
+      - nginx-net
+  mysql: # 服务名称
+    image: mysql:8 # 创建容器时所需的镜像
+    container_name: mysql8 # 容器名称，默认为"工程名称_服务条目名称_序号"
+    ports: # 宿主机与容器的端口映射关系
+      - "3306:3306" # 左边宿主机端口:右边容器端口
+    environment: # 创建容器时所需的环境变量
+      MYSQL_ROOT_PASSWORD: 1234
+    volumes:
+      - "/mnt/docker/mysql/conf:/etc/mysql/conf.d"
+      - "/mnt/docker/mysql/data:/var/lib/mysql"
+    networks: # 配置容器连接的网络，引用顶级 networks 下的条目
+      - nginx-net
+# 定义网络，可以多个。如果不声明，默认会创建一个网络名称为"工程名称_default"的 bridge 网络
+networks:
+  nginx-net: # 一个具体网络的条目名称
+    name: nginx-net # 网络名称，默认为"工程名称_网络条目名称"
+    driver: bridge # 网络模式，默认为 bridge
+
