@@ -5,6 +5,8 @@ define('APP_PATH', realpath(dirname(__FILE__)));
 require_once APP_PATH . '/../vendor/autoload.php';
 //
 //phpinfo();
+echo "hello";
+exit;
 
 define('CAFILE', dirname(__FILE__) . DIRECTORY_SEPARATOR . 'fullchain.pem');
 
