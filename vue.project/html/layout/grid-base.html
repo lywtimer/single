@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>layout-grid</title>
+  <style>
+      body {
+          margin: 0;
+          padding: 0;
+          display: grid;
+          grid-gap: 1rem;
+          /*grid-template-columns: 200px 200px 200px 100px;*/
+          /*grid-template-rows: auto auto 1fr auto;*/
+          grid-template-columns: 12em 1fr; /*列的布局*/
+          grid-template-rows: auto 1fr auto; /*行的布局*/
+          grid-template-areas: 'header header' 'nav main' 'nav footer';
+          min-height: 100vh;
+          background-color: red;
+      }
+
+      header {
+          background-color: #8cb9d7;
+          grid-area: header;
+      }
+      nav {
+          background-color: greenyellow;
+          grid-area: nav;
+      }
+      main {
+          background-color: lightpink;
+          grid-area: main;
+      }
+      footer {
+          background-color: lightseagreen;
+          grid-area: footer;
+      }
+
+      .box {
+          background-color: rgb(168, 211, 170);
+      }
+
+      .container {
+          width: 60rem;
+          height: 40rem;
+          margin: 20vh auto;
+          border: 1px solid gray;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          /*align-items: flex-end;*/
+          align-content: flex-start;
+      }
+      .container .card {
+          color: #f8f8f8;
+          margin: 0.1rem;
+          width: 5rem;
+          height: 5rem;
+          border-radius: 0.5rem;
+          background-color: #282828;
+      }
+  </style>
+</head>
+<body>
+<header>header</header>
+<nav>
+    <ul>
+        <li>nav</li>
+        <li>nav</li>
+        <li>nav</li>
+        <li>nav</li>
+    </ul>
+</nav>
+  <main>
+      <div class="container">
+          <div class="card">1</div>
+          <div class="card">2</div>
+          <div class="card">3</div>
+          <div class="card">4</div>
+          <div class="card">5</div>
+          <div class="card">6</div>
+          <div class="card">7</div>
+          <div class="card">8</div>
+          <div class="card">9</div>
+          <div class="card">10</div>
+          <div class="card">11</div>
+          <div class="card">12</div>
+          <div class="card">13</div>
+          <div class="card">14</div>
+          <div class="card">15</div>
+          <div class="card">16</div>
+          <div class="card">17</div>
+          <div class="card">18</div>
+          <div class="card">19</div>
+          <div class="card">20</div>
+          <div class="card">21</div>
+          <div class="card">22</div>
+          <div class="card">23</div>
+          <div class="card">24</div>
+          <div class="card">25</div>
+          <div class="card">26</div>
+          <div class="card">27</div>
+          <div class="card">28</div>
+          <div class="card">29</div>
+          <div class="card">30</div>
+      </div>
+  </main>
+  <footer>footer</footer>
+</body>
+</html>
