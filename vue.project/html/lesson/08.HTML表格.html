@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格</title>
+</head>
+<body>
+    <h1>表格</h1>
+    <p>表格属性</p>
+    <h2>标准的表格包含哪些元素</h2>
+    <ul>
+        <li>标题</li>
+        <li>头部</li>
+        <li>主体</li>
+        <li>脚注</li>
+    </ul>
+    <table border="1" width="500" height="200" cellspacing="0">
+        <caption>家庭成员</caption>
+        <thead height="50" align="center" valign="bottom">
+            <tr>
+                <th width="80">分组</th>
+                <th width="80">角色</th>
+                <th>称呼</th>
+                <th>年龄</th>
+            </tr>
+        </thead>
+        <tbody height="200" align="center" valign="bottom">
+            <tr>
+                <td rowspan="2">主力</td>
+                <td>战士</td>
+                <td>小李子</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>法师</td>
+                <td>小妮子</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td rowspan="1">替补</td>
+                <td>刺客</td>
+                <td>小白子</td>
+                <td>40</td>
+            </tr>
+        </tbody>
+        <tfoot height="50" align="center" valign="bottom">
+            <tr>
+                <td colspan="4">共计2人</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

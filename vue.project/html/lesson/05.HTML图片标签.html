@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片标签</title>
+    <style>
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>图片标签</h1>
+    <h2></h2>
+    <p>alt属性的作用:</p>
+    <p>搜索引擎得知图片的内容</p>
+    <p>图片无法展示的时候,呈现alt属性的值</p>
+    <p>盲人阅读器会朗读alt属性的值</p>
+    <h2>相对路径</h2>
+    <p>以当前路径作为参考点、./ 可以省略不写</p>
+    <h2>绝对路径</h2>
+    <p>本地绝对路径、网络绝对路径（防盗链）</p>
+    <img src="../img/moon.png" alt="moon">
+    <img src="../img/moon.png" alt="moon">
+    <img src="../img/sun.jpg" alt="sun" width="200">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAAGWB6gOAAAAAXNSR0IArs4c6QAABZFJREFUWAndl2tIpFUYx51xdHO0HNdk021bCIJdiLb6UGwrFBREQWEXDGqhq3dlFQzaD+XYhy4qOSLeP20XWqUICTb6UNRaa/QhFqIPQcXWltrGpqnr5G2m3//1PS/vjPOqs6FQB945z3mu/3POc55zJiPjsltlZWXcL2sR6quqqr71+/0PiLZaPB73GXpdb0lkGgwGCxYWFqb91dXV4cHBQUtQUlKS6Y/FYi3GLhwOx/xGGgqFZo0gocffWGNjYyiBqQHYxhE+aQRSqqiomLZlJ62J+Hy+jwlxwiipHxoaKlDPXB5T7zQ8HsNjqQmnqTjCtIlU1hYmeUIYJNznbq+MWzUOsGotLNS5zMzMsb6+vjuNJxSGkV9lKYG+gJlZFmKYBr/cLKoTzghT9VIaVgi+GbdCTk7ONfBi4gUGBgbG6X0aGDyio9HoK+xsQPS6BuDldcytMDC8YTM9C4qXEhDn2XsWI56nbIxEItbccPw+Nn8xnWeMrYMd4WkMrrMF+8n8hv7+/jyN3XMmcbP5HmloaNglvjJbyWw5wkmEyJ8SIWw72qjzy0F3d7evubk5b2JiYhVl35b2ze2V6H9rDKKijo6OS0aWtiNS7wmMhegPZnKUmUTlLOViA/0rZLfn5uYGOzs7o5qKe7FlCO8NujpScpfGKR1JoFZTU3P96urqj6Ldjlib3Pb29gXtqGT/4VZXV1e4GXwnIVMpaosXFxcvLC9bR2vD9fTcfrb2YTlhQcuSg1BDo+RTgm3CwBiwtSMcF52nIrJ91PBNj/OIndGGlWFNjSQrx/B1PnR8Wo8rcJByKuju5QweJ1gZqM+gd4e8WYgoksM4aGXcgrN6hFkSJjeM89H9VXwS8SC6hxN0UNgwsdxy6J9B0i4H0JegHxWdco0k8Gogfw4kTZJDn6K7S3TajgKBwAR2mTLG4Xm+faLTdrSyslKO3VkZg+gIBfBL0RsmpBSSGwhe4vY6ID70bfn5+feIdhy5FxTF+7nmPpKCu9XW1uZRDS4i+x79Usna2trm1FuOzDUnBgrFKE+wG++SBo+LZ1pvb+889NX2eCwrK+tGI/PscbiCs9+l4EZrxshOuI09FxuUQnsh2Ylt3ARa5w3jduhJ46iF7ydPhf+9IGWlSGfW1LfsycnJXnLzWexmuMGL4K2k48Ot6+S1m7kVmiw6BIhR6uR+9E0RCs3MzOjZkfAekz/dhPPz809zJno4oUZfooTmmY0JWq4BCfUiXwwwZ23HN5G5m/qZm5vrpLR2M5GYjkTyzWFCbGnLOPH7OMSjgLhFhgAZhK4HiPOOBKQ1a/f7wARx9+jp4aHqusSBv7Wnp+c7t9wBBOrDBDnjFibRfwKknHP6SRLfGqYCpNJFMVXx3MMz+lBXV5cpJCpjp/lw6XsQnx9aTsQwBIAiADpG9W3l6gsb/lb7VIBkC/8Fulf54tTcg6qr4hPvKPHeAlCUQr3H1NhN917G/6axra8R9GV8+Nj2k8YXq/I2/K8BlTM7O1tj+NsOyA6kP1lqN+uttUZa15h1F5LsRwxvpwDttQOuFhYWXjTB6c0/lV8Mb9sB2ce7RwHZok7G1v9D1SVY94lP3n6mXs0pjChPs596DdzLm+6cJXX9YPQF9/QPLtamJH8XCiicughD+B8hb543RtSl96CD8Ic5RHqkWs05ZRrpIcp+NqB07Zp47ReQepReCT/GdxwHbW65aK9TxopkT01NFWHzm/T0J5Gntt5UB/A1XlxcXGpWTfIEQGJ4NTlaWlrqB9xTts43vPzKWLXzGnsBsnWtDh0df5UBbVPK8rJlQJZH+4cacjfARhju5ltmpvWMByT2qtSA+QCxcuYdLuAK96rIzrTLAmSM7Ufkm4B5yPC8ABn5jvVNTU27mbVzSHYs8HYH+gcud4MroXi7qAAAAABJRU5ErkJggg==" alt="sun" width="200">
+    <p>
+        图片类型
+        <ul>
+            <li>
+                jpg 有损压缩,支持的颜色丰富,占用空间较小,不支持透明背景,不支持动图;
+            </li>
+            <li>
+                png 无损压缩,支持的颜色丰富,占用空间略大,支持透明背景,不支持动图;
+            </li>
+            <li>
+                bmp 不压缩,支持的颜色丰富,占用空间极大,不支持透明背景,不支持动图;
+            </li>
+            <li>
+                gif 支持的颜色少,支持简单透明背景,支持动图;
+            </li>
+            <li>
+                webp 具备以上优点,兼容性不太好
+            </li>
+            <li>
+                 base64 把图片进行base64编码,需要通过浏览器打开,一些较小的图片或者需要和网页一起加载的图片
+            </li>
+        </ul>
+    </p>
+</body>
+</html>

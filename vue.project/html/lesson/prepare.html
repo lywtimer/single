@@ -1,16 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <title>prepare</title>
 </head>
 <body>
+    <!-- 浏览器会检查html,尽可能把不合法的格式处理后再渲染.使用[检查]和[查看网页源代码]验证 -->
+    <marquee loop="2" bgcolor="green">
+        <p>天下事有难易乎,为之,则难者亦易矣;不为,则易者亦难矣。</p>
+    </marquee>
+    <h4>vscode</h4>
+    <pre>
+        安装live server
+            1.打开网页的方式贴近项目上线
+            2.代码出现改动后,可以自动刷新
+            3.设置自动保存
+            4.注意:vscode打开的是文件夹,打开的网页必须是标准的HTML结构,否则live server无法正常工作
+        注释
+            不呈现在浏览器中,源代码依然可见,不能嵌套
+        文档声明
+            声明当前网页的版本
+            https://www.w3.org/QA/2002/04/valid-dtd-list.html
+        字符编码
+            字符集(编码方式 ASCII ISO 8859-1 GB2312 GBK UTF-8)
+            解码不正确时出现乱码 编码不正常无法挽回 မင်းကို ချစ်တယ်
+        设置语言
+            lang="zh-CN" 语言-国家/地区 
+            让浏览器显示对应的翻译提示 利于搜索引擎优化
+            <a target="_blank" href="https://www.w3school.com.cn/tags/html_ref_language_codes.asp">HTML 语言代码参考手册</a>
+            <a target="_blank" href="https://www.w3school.com.cn/tags/html_ref_country_codes.asp">HTML 国家/地区参考手册</a>
+            <a target="_blank" href="https://www.w3.org/International/articles/language-tags/">W3C官网说明</a>
+            
+    </pre>
 <p>五大浏览器,四大内核</p>
 <p>HTML = HyperText Markup Language</p>
 <p>2014年 W3C 正式发布 HTML5</p>
-<marquee loop="2" bgcolor="green">
-    <p>天下事有难易乎,为之,则难者亦易矣;不为,则易者亦难矣。</p>
-    <p>浏览器会检查html,尽可能把不合法的格式处理后再渲染.使用[检查]和[查看网页源代码]验证</p>
-</marquee>
+
+<div></div>
 </body>
 </html>
