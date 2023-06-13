@@ -17,5 +17,44 @@
         <input type="text" name="keyword">
         <button>京东搜索</button>
     </form>
+    <h2>注册表单</h2>
+    <p>label的for属性关联表单的id;或者使用label包裹表单元素</p>
+    <form action="https://search.jd.com/search" target="_blank">
+        <fieldset>
+            <legend>主要信息</legend>
+                <label for="account">账户: </label><input type="text" id="account" name="account" value="guest" maxlength="16"> <br>
+                名字: <input type="text" disabled name="username" value="guest" maxlength="16"> <br>
+                密码: <input type="password" name="pwd" ><br>
+                性别: 
+                <label>
+                    <input type="radio" name="gender" value="1">男
+                </label> 
+                <label>
+                    <input type="radio" name="gender" value="2">女
+                </label> <br>
+        </fieldset>
+        <fieldset>
+            <legend>其他信息</legend>
+                爱好: 
+                <input type="checkbox" name="hobby" value="1">抽烟  
+                <input type="checkbox" name="hobby" value="2">喝酒
+                <input type="checkbox" name="hobby" value="3">烫头 <br>
+                其他:
+                <textarea name="other" cols="30" rows="3"></textarea><br>
+                地区:
+                <select name="city" >
+                    <option value="1">北京</option>
+                    <option value="2">上海</option>
+                    <option value="3">广东</option>
+                    <option value="4" selected>山东</option>
+                    <option disabled value="5">青海</option>
+                </select><br>
+        </fieldset>
+        
+        
+        <input type="submit" value="提交信息"> <input type="reset" value="重新填写">
+        <input type="hidden" name="token" value="com.lywtimer.api">
+        <button type="button">刷新验证码</button>
+    </form>
 </body>
 </html>
