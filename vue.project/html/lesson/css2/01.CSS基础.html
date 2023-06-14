@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css简介</title>
+    <link rel="stylesheet" href="./position.css">
+    <style>
+        p{
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <h1>css 全称 层叠样式表</h1>
+    <p>层叠:一层一层涂上去</p>
+    <p>表:样式属性的列表</p>
+    <p>一种标记语言</p>
+    <p>核心思想:HTML 搭建结构, CSS 添加样式, 结构与样式的分离</p>
+    <div>
+        <h2>CSS的编写位置</h2> 
+        <ul>
+            <li style="color: orangered;font-size: medium;">行内样式:style="名:值;"</li>
+            <li class="inner-li">内部样式:写在html的内部,将CSS代码提取至style标签里,可以在当前页面复用了</li>
+            <li class="inner-li">外部样式:写在.css文件中;可以在不同页面复用了;结构与样式的完全分离;触发缓存机制</li>
+            <li>样式表的优先级: 
+                <p>行内样式优先级高;内部与外部样式,后来者居上(覆盖效果)</p> 
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
