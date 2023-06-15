@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS复合选择器</title>
+    <link rel="stylesheet" href="./position.css">
+    <style>
+        * {
+            font-size: 30px;
+        }
+        .beauty {
+            color: red;
+        }
+        .rich {
+            color: gold;
+        }
+        p.beauty {
+            color: aquamarine;
+        }
+        .dog {
+            background-color: chartreuse;
+        }
+        .pig {
+            background-color: coral;
+        }
+        .rich,
+        .beauty,
+        .dog,
+        .pig {
+            width: 280px;
+        }
+        ul li {
+            color: red;
+        }
+        ul li a {
+            color: gray;
+        }
+        ol li {
+            color: orange;
+        }
+        div>a {
+            color: red;
+        }
+        div>p>a {
+            color: skyblue;
+        }
+        .last-div>a {
+            color: chocolate;
+        }
+        .brother>div~p {
+            color: yellowgreen;
+        }
+        .brother>div+p {
+            color: crimson;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS复合选择器</h1>
+    <h2>CSS交集选择器</h2>
+    <p class="rich">单一类选择器1</p>
+    <div class="beauty">单一类选择器2</div>
+    <div class="beauty rich">单一类选择器3</div>
+    <p class="beauty">交集选择器1</p>
+    <p class="beauty">交集选择器2</p>
+    <hr>
+    <h2>CSS并集选择器</h2>
+    <h3 class="dog">小狗旺财</h3>
+    <h3 class="pig">小猪佩奇</h3>
+    <hr>
+    <h2>CSS后代选择器</h2>
+    <div>选中指定元素中,符合要求的后代元素</div>
+    <ul>
+        <li>抽烟</li>
+        <li>喝酒</li>
+        <li><a href="#">烫头</a></li>
+    </ul>
+    <ol>
+        <li>张三</li>
+        <li>李四</li>
+        <li>王五</li>
+        <li>赵六</li>
+    </ol>
+    <h2>CSS子代选择器</h2>
+    <div>
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <p>
+            <a href="#">4</a>
+            <div class="last-div">
+                <a href="#">5</a>
+            </div>
+        </p>
+    </div>
+    <h2>CSS兄弟选择器</h2>
+    <div>睡在我下铺(所有)的兄弟</div>
+    <div class="brother">
+        <div>尚硅谷</div>
+        <p>前端</p>
+        <p>java</p>
+        <p>大数据</p>
+        <p>ui</p>
+    </div>
+    <h2>CSS属性选择器</h2>
+    <div title="attribute-selector1">[属性]</div>
+    <div title="attribute-selector2">[属性="属性值"]</div>
+    <div title="attribute-selector3">[属性^="属性值"] 开头</div>
+    <div title="attribute-selector4">[属性$="属性值"] 结尾</div>
+    <div title="attribute-selector5">[属性*="属性值"] 包含</div>
+
+</body>
+</html>

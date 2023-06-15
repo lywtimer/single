@@ -7,8 +7,11 @@
     <title>css简介</title>
     <link rel="stylesheet" href="./position.css">
     <style>
-        p{
+        p {
             color: blueviolet;
+        }
+        #selector-base {
+            color: blue;
         }
     </style>
 </head>
@@ -28,6 +31,15 @@
                 <p>行内样式优先级高;内部与外部样式,后来者居上(覆盖效果)</p> 
             </li>
         </ul>
+        <h2>语法规范</h2>
+        <p>选择器:找到元素</p>
+        <p>声明快:多个声明组成;声明的格式 属性名: 属性值</p>
+        <h2>CSS代码风格</h2>
+        <p>展开风格,紧凑风格</p>
+        <p>项目上线时使用webpack把展开风格压缩成紧凑风格,减小文件的体积</p>
+        <h2>基本选择器</h2>
+        <p id="selector-base">通配选择器 元素选择器 类选择器 id选择器</p>
     </div>
+
 </body>
 </html>
