@@ -40,7 +40,7 @@
         ol li {
             color: orange;
         }
-        div>a {
+        div.div-child>a {
             color: red;
         }
         div>p>a {
@@ -54,6 +54,9 @@
         }
         .brother>div+p {
             color: crimson;
+        }
+        li+li {
+            color: yellow;
         }
     </style>
 </head>
@@ -83,9 +86,10 @@
         <li>王五</li>
         <li>赵六</li>
     </ol>
+    <hr>
     <h2>CSS子代选择器</h2>
-    <div>
-        <a href="#">1</a>
+    <div class="div-child">
+        <a href="#">div>a 子代选择器</a>
         <a href="#">2</a>
         <a href="#">3</a>
         <p>
@@ -95,15 +99,23 @@
             </div>
         </p>
     </div>
+    <hr>
     <h2>CSS兄弟选择器</h2>
-    <div>睡在我下铺(所有)的兄弟</div>
     <div class="brother">
         <div>尚硅谷</div>
-        <p>前端</p>
+        <p>前端 .brother>div+p 紧紧相邻的p元素</p>
+        <p>.brother>div~p 睡在我下铺(所有)的兄弟</p>
         <p>java</p>
         <p>大数据</p>
         <p>ui</p>
     </div>
+    <ul>
+        <li>主页</li>
+        <li>商城</li>
+        <li>购物车</li>
+        <li>我的</li>
+    </ul>
+    <hr>
     <h2>CSS属性选择器</h2>
     <div title="attribute-selector1">[属性]</div>
     <div title="attribute-selector2">[属性="属性值"]</div>

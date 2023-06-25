@@ -10,24 +10,105 @@
         * {
             font-size: 30px;
         }
+        a:link {
+            color: orange;
+        }
         a:visited {
             color: aqua;
         }
         a:hover {
-            color: aqua;
+            color: gray;
         }
         a:active {
-            color: aqua;
+            color: red;
+        }
+        input:focus,
+        select:focus {
+            color: orange;
+            background-color: olivedrab;
+        }
+        div>p:first-child {
+            color: chocolate;
+        }
+        div>p:first-of-type {
+            color: yellowgreen;
+        }
+        div>p:last-child {
+            color: red;
+        }
+        div>p:nth-child(4) {
+            color: gold;
+        }
+        div>p:nth-of-type(-n + 5) {
+            color: orangered;
+        }
+        div>p:nth-child(2n+1) {
+            color: gray;
+        }
+        div.other span:only-child {
+            color: gray;
+        }
+        div.other-of-type span:only-of-type {
+            color: blanchedalmond;
         }
     </style>
 </head>
 <body>
     <h1>CSS伪类选择器</h1>
     <div>是元素特殊状态的一种描述</div>
-    <h2>动态伪类lvha link visited hover active</h2>
-    <h2>结构爱伪类</h2>
+    <h2>动态伪类 a标签顺序lvha (link visited hover active)</h2>
+    <div>
+        <a href="https://www.jd.com">去京东</a>
+        <a href="https://www.baidu.com">去百度</a>
+        <a href="https://www.liyuanwu.com">去不存在的网址</a>
+    </div>
+    <h2>表单类元素 input:focus</h2>
     <ul>
-        <li>an + b</li>
+        <li><input type="text" name="" id=""></li>
+        <li>
+            <select name="" id="">
+                <option value="1">北京</option>
+                <option value="2">上海</option>
+            </select>
+        </li>
     </ul>
+    <h2>结构伪类</h2>
+    <div>
+        <span>1.span标签 div>p:first-child div第一个儿子必须是p元素</span>
+        <p>2.p标签 div>p:first-of-type 第一个p元素儿子</p>
+        <p>3.p标签 张三:98</p>
+        <!-- <span>捣乱</span> -->
+        <p>4.p标签 div>p:nth-child(4) div第四个儿子必须是p元素</p>
+        <p>5.p标签 王五:87</p>
+        <p>6.p标签 div>p:nth-of-type(-n + 5) div第-n+5个p元素</p>
+        <span>7.span标签 老八:32</span>
+        <p>8.p标签 </p>
+        <p>9.p标签 div>p:nth-child(2n+1), 必须是an+b的格式</p>
+        <p>10.div>p:last-child</p>
+    </div>
+    <h2>结构伪类</h2>
+    <div>
+        <div class="other">
+            <span>span标签 div.other span:only-child</span>
+        </div>
+        <div class="other">
+            <span>span标签 div.other span:only-child</span>
+            <p>div标签 div.other span:only-child</p>
+        </div>
+        <div class="other-of-type">
+            <span>span标签 div.other-of-type span:only-of-type</span>
+            <p>div标签 div.other-of-type span:only-of-type</p>
+        </div>
+    </div>
+    <hr>
+    <h2>结构伪类:否定伪类</h2>
+    <div class="not-selector">
+        <p>1.</p>
+        <p>2.</p>
+        <p>3.</p>
+        <p>4.</p>
+        <p>5.</p>
+        <p>6.</p>
+    </div>
 </body>
 </html>
