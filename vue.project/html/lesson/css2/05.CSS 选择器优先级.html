@@ -11,6 +11,15 @@
         * {
             color: purple;
         }
+        .container span.slogan {
+            color: red;
+        }
+        div>p>span:nth-child(1) {
+            color: green;
+        }
+        div>p>span:first-child {
+            color: blue;
+        }
     </style>
 </head>
 <body>
@@ -24,5 +33,12 @@
             <span>欢迎大家来学习!</span>
         </p>
     </div>
+    <h2>计算权重 (a,b,c)</h2>
+    <ul>
+        <li>a: ID选择器的个数</li>
+        <li>b: 类、伪类、属性 选择器个数</li>
+        <li>c: 元素、伪元素 选择器的个数</li>
+        <li>挨个比较,数值大的优先级高</li>
+    </ul>
 </body>
 </html>
