@@ -51,6 +51,37 @@
         div.other-of-type span:only-of-type {
             color: blanchedalmond;
         }
+        div.not-selector>p:not(:first-child) {
+            color: red;
+        }
+        div.ui-selector>input:checked {
+            width: 50px;
+            height: 50px;
+        }
+        div.ui-selector>input:enabled {
+            background-color: green;
+        }
+        div.ui-selector>input:disabled {
+            background-color: gray;
+        }
+        div.obj-selector div {
+            height: 100px;
+            margin-top: 10px;
+            background-color: gray;
+        }
+        div.obj-selector div:target {
+            background-color: gold;
+        }
+        div.lang>p:lang(en) {
+            color: yellow;
+        }
+        div.lang>p:lang(zh-CN) {
+            color: red;
+        }
+        .fake-selecter::first-letter {
+            color: red;
+            font-size: 40px;
+        }
     </style>
 </head>
 <body>
@@ -103,12 +134,52 @@
     <hr>
     <h2>结构伪类:否定伪类</h2>
     <div class="not-selector">
-        <p>1.</p>
+        <p>1.div.not-selector>p:not(:first-child)</p>
         <p>2.</p>
         <p>3.</p>
         <p>4.</p>
         <p>5.</p>
         <p>6.</p>
     </div>
+    <hr>
+    <h2>结构伪类:UI伪类</h2>
+    <div class="ui-selector">
+        <p>
+            input样式 div.ui-selector>input:checked
+        </p>
+        <input type="checkbox" name="" id="">
+        <input type="radio" name="gender" id="">
+        <input type="radio" name="gender" id="">
+        <input type="text" placeholder="div.ui-selector>input:enabled">
+        <input type="text" disabled placeholder="div.ui-selector>input:disabled">
+    </div>
+    <hr>
+    <h2>结构伪类:目标伪类</h2>
+    <div class="obj-selector">
+        <a href="#one">去看第1个</a>
+        <a href="#two">去看第2个</a>
+        <a href="#three">去看第3个</a>
+        <a href="#four">去看第4个</a>
+        <a href="#five">去看第5个</a>
+        <a href="#six">去看第6个</a>
+        <div id="one">1 div.obj-selector div:target</div>
+        <div id="two">2</div>
+        <div id="three">3</div>
+        <div id="four">4</div>
+        <div id="five">5</div>
+        <div id="six">6</div>
+        <div id="">7</div>
+    </div>
+    <hr>
+    <h2>结构伪类:语言伪类</h2>
+    <div class="lang-selector">
+        <p lang="en">div.lang>p:lang(en)</p>
+        <p lang="zh-CN">div.lang>p:lang(zh-CN)</p>
+    </div>
+    <hr>
+    <h2>伪元素选择器</h2>
+    <p>::first-letter</p>
+    <p>伪元素是元素中的一些特殊位置</p>
+    <p class="fake-selecter">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ipsam possimus voluptate fugit et harum laudantium? Dolor animi eos magni suscipit assumenda quae rem, reiciendis vero, exercitationem porro blanditiis temporibus amet? Sint tempora vero, saepe assumenda iusto nisi laboriosam, aspernatur sequi nam repudiandae aperiam neque impedit ad ipsa. Nemo totam minima vel dolorum laborum quod nam repudiandae pariatur incidunt obcaecati odio enim atque neque numquam consequatur, qui ab aliquam aut natus consectetur at quaerat? Ex non itaque corrupti quo, quaerat accusamus deserunt laborum asperiores quis ab officiis fugiat quidem laboriosam, dolores modi totam! Eaque, aliquam. Nemo nam dolorem amet praesentium.</p>
 </body>
 </html>
