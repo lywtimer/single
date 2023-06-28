@@ -7,7 +7,13 @@
     <title>颜色</title>
     <style>
         .rgb-div-t1 {
-
+            color: rgba(300, 200, 100, 0.7);
+        }
+        .rgb-div-t2 {
+            color: #c7edccff;
+        }
+        .rgb-div-t3 {
+            color: hsla(0deg, 100%, 70%, 1);
         }
     </style>
 </head>
@@ -17,7 +23,28 @@
         <li>颜色名 编写简单,名称有限,不够精细 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/named-color">颜色名参考</a></li>
         <li>
             RGB 光的三原色 red green blue
-
+            <ul>
+                <li class="rgb-div-t1">rgba(300, 200, 100, 0.7) RGBA 取值0~255 或者 100%, 不能混合; A 表示透明度,取值范围 0~1</li>
+                <li>三种颜色值相同,呈现灰色,值越大,灰色越浅</li>
+            </ul>
+        </li>
+        <li class="rgb-div-t2">
+            十六进制色值 HEX或者HEXA 原理与 rgb 一致 ,书写格式:#c7edcc
+            <ul>
+                <li>色值范围 00~ff</li>
+                <li>色值的两位都相同可以简写: #ff9988 简写 #f98</li>
+                <li>色值的两位都相同可以简写: #ff998866 简写 #f986</li>
+                <li>ie浏览器不支持HEXA</li>
+            </ul>
+        </li>
+        <li class="rgb-div-t3">
+            HSL 或者 HSLA ,书写格式 hsla(0deg, 100%, 70%, 1)
+            <ul>
+                <li>通过 色相,饱和度,亮度, 来表示一个颜色</li>
+                <li>色相取值 0~360</li>
+                <li>饱和度取值 0~100% 0%全灰 100%没有灰</li>
+                <li>亮度取值 0~100% 0%黑色 100%白色</li>
+            </ul>
         </li>
     </ul>
 </body>
