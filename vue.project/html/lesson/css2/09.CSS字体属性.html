@@ -28,6 +28,15 @@
         li:nth-child(2) {
             font-family: "SimSun","楷体",sans-serif;
         }
+        li:nth-child(3) {
+            font-style: italic;
+        }
+        li:nth-child(4) {
+            font-weight: lighter;
+        }
+        li:nth-child(5) {
+            font: italic lighter 50px "楷体";
+        }
     </style>
 </head>
 <body>
@@ -64,6 +73,59 @@
                     
                     
                 </div>
+        </li>
+        <li>
+            <h2>字体属性-字体风格</h2>
+            <ul>
+                <li>
+                    font-style: italic;
+                </li>
+                <li>
+                    常用值:
+                    normal:正常(默认)
+                    italic:斜体(使用字体自带的斜体效果)
+                    oblique:斜体(强制倾斜产生的斜体效果)
+                </li>
+                <li>
+                    实现斜体效果时推荐使用 italic
+                </li>
+            </ul>
+           
+        </li>
+        <li>
+            <h2>字体属性-字体粗细</h2>
+            <ul>
+                <li>
+                    font-weight: lighter; 
+                </li>
+                <li>
+                    常用值:
+                    lighter:细
+                    normal:正常(默认)
+                    bold:粗
+                    bolder:很粗(多数字体不支持,会使用bold)
+                    100~1000 且无单位,数值越大,字体越粗
+                    100~300等同于lighter,400~500等同于normal,600以上等同于bold.与字体设计精度有关
+                </li>
+                <li>
+                    实现斜体效果时推荐使用 italic
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h2>字体属性-复合写法</h2>
+            <ul>
+                <li>font: italic lighter 50px "楷体";</li>
+                <li>
+                    编写规则
+                    <ol>
+                        <li>字体大小、字体族必须都写上</li>
+                        <li>字体大小、字体族顺序固定倒数第二、第一位</li>
+                        <li>各个属性间使用空格隔开</li>
+                    </ol>
+                </li>
+                <li>开发中更推荐复合写法</li>
+            </ul>
         </li>
     </ul>
 
