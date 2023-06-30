@@ -5,10 +5,44 @@
     <title>文本属性</title>
     <style>
         body {
-            font-size: 40px;
+            font-size: 30px;
         }
         li:nth-child(1) {
             color: rgb(112,45,78);
+        }
+        li:nth-child(2)>p:nth-of-type(2) {
+            letter-spacing: 10px;
+        }
+        li:nth-child(2)>p:nth-of-type(3) {
+            word-spacing: 10px;
+        }
+        li:nth-child(3)>p:nth-of-type(2) {
+            text-decoration: overline;
+        }
+        li:nth-child(3)>p:nth-of-type(3) {
+            text-decoration: line-through;
+        }
+        li:nth-child(3)>p:nth-of-type(4) {
+            text-decoration: underline dotted red;
+        }
+        li:nth-child(3)>p:nth-of-type(5) {
+            text-decoration: none;
+        }
+        .article-text-indent {
+            text-indent: 60px;
+        }
+        .word-text-align {
+            text-align: center;
+            background-color: orange;
+        }
+        .li-font-size {
+            font-size: 40px;
+        }
+        .li-font-size-backgroud {
+            background-color: greenyellow;
+        } 
+        .li-line-height {
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -36,6 +70,105 @@
         </li>
         <li>
             <h2>文本属性-文本间距</h2>
+            <p>正常 Greatness. It’s just something we made up.</p>
+            <p>字母间距 Greatness. It’s just something we made up.</p>
+            <p>单词间距 Greatness. It’s just something we made up.</p>
+            <ul>
+                <li>
+                    letter-spacing: 10px; 可以为负值
+                    word-spacing: 10px; 对中文不起作用,通过空格识别
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h2>文本属性-文本修饰</h2>
+            <p>Ideas are scary. They come into this world ugly and messy. </p>
+            <p>Ideas are scary. They come into this world ugly and messy. </p>
+            <p>Ideas are scary. They come into this world ugly and messy. </p>
+            <p>Ideas are scary. They come into this world ugly and messy. </p>
+            <p>Ideas are scary. They come into this world ugly and messy. </p>
+            <ul>
+                <li>
+                    text-decoration: underline dotted red;
+                </li>
+                <li>
+                    可选值:
+                    <ol>
+                        <li>none: 无装饰线 (常用于去掉标签自带样式)</li>
+                        <li>underline: 下划线</li>
+                        <li>overline: 上划线</li>
+                        <li>line-through: 删除线</li>
+                    </ol>
+                </li>
+                <li>
+                    可搭配 dotted | wavy
+                    可指定颜色 
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h2>文本属性-文本缩进</h2>
+            <p class="article-text-indent">
+                A Donkey once found a Lion’s skin which the hunters had left out in the sun to dry. He put it on and went towards his native village. All fled at his approach, both men and animals, and he was a proud Donkey that day.
+            </p>
+            <ul>
+                <li>
+                    text-indent: 60px;
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h2>文本属性-文本缩进</h2>
+            <p class="word-text-align">
+                Proactive
+            </p>
+            <ul>
+                <li>
+                    text-align: center;
+                </li>
+                <li>
+                    常用值 left right center
+                </li>
+            </ul>
+        </li>
+        <li class="li-font-size">
+            <h2>文本属性-字体大小</h2>
+            <ul>
+                <li>
+                    text-size: 40px;
+                </li>
+                <li>
+                    由于字体设计原因,文字最终呈现的大小,并不一定与font-size的值一致,可能大,也可能小
+                </li>
+                <li class="li-font-size-backgroud">
+                    通常情况下,文字相对字体设计框,并不是垂直居中,通常都靠下一些.
+                </li>
+            </ul>
+        </li>
+        <li class="li-line-height">
+            <h2>文本属性-行高</h2>
+            <ul>
+                <li>
+                    line-height: 60px;
+                    line-height: 1.6;
+                    line-height: 160%;
+                </li>
+                <li>
+                    可选值:
+                    <ol>
+                        <li>normal: 由浏览器根据文字大小决定的一个默认值</li>
+                        <li>像素 px</li>
+                        <li>数字: 参考自身 font-size 的倍数</li>
+                        <li>百分比: 参考自身 font-size 的百分比</li>
+                    </ol>
+                </li>
+                <li>
+                    由于字体设计原因,文字在一行中,并不是绝对居中,行高设置不当会导致行与行之间重叠,效果就是文字会重叠.
+                </li>
+                <li class="li-font-size-backgroud">
+                    通常情况下,文字相对字体设计框,并不是垂直居中,通常都靠下一些.
+                </li>
+            </ul>
         </li>
     </ul>
 </body>
