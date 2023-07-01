@@ -44,6 +44,21 @@
         .li-line-height {
             line-height: 1.6;
         }
+        .li-line-height-bottom {
+            height: 300px;
+            line-height: 560px;
+            background-color: skyblue;
+        }
+        .li-vertical-align {
+            height: 300px;
+            font-size: 100px;
+            background-color: skyblue;
+        }
+        .li-vertical-align>span {
+            font-size: 40px;
+            background-color: orange;
+            vertical-align: baseline;
+        }
     </style>
 </head>
 <body>
@@ -163,6 +178,25 @@
                     </ol>
                 </li>
                 <li>
+                    注意事项:
+                    <ol>
+                        <li>line-height过小会产生文字重叠,最小值是0</li>
+                        <li>line-height可以继承,为了更好的呈现文字,最好写数值</li>
+                        <li>
+                            line-height 和 height 的关系
+                            设置了height,那么高度就是height的值
+                            不设置height,就会根据line-height计算高度
+                        </li>
+                        <li>
+                            行高的应用场景:
+                            <ol>
+                                <li>调整多行文字的间距</li>
+                                <li>调整单行文字的垂直居中</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+                <li>
                     由于字体设计原因,文字在一行中,并不是绝对居中,行高设置不当会导致行与行之间重叠,效果就是文字会重叠.
                 </li>
                 <li class="li-font-size-backgroud">
@@ -170,6 +204,35 @@
                     通常情况下,文字相对字体设计框,并不是垂直居中,通常都靠下一些.
                 </li>
             </ul>
+        </li>
+        <li>
+            <h2>文本属性-垂直对齐</h2>
+            <ul>
+                <li>顶部:无需任何属性</li>
+                <li>居中:单行文字使用 height=line-height</li>
+                <li>底部:单行文字使用 line-height=height*2 - font-size - x; x 根据字体族进行调整</li>
+            </ul>
+            <div class="li-line-height-bottom">
+                文本对齐底部
+            </div>
+        </li>
+        <li>
+            <h2>文本属性-vertical-align</h2>
+            <ul>
+                <li>作用:指定同一行元素之间,或表格单元格内文字的垂直对齐方式</li>
+                <li>常用值:
+                    <ol>
+                        <li>baseline 默认值</li>
+                        <li>top 元素顶部与所在行顶部对齐</li>
+                        <li>middle 使元素的中部与父元素的基线加上父元素 x-height（译注：x 高度）的一半对齐。</li>
+                        <li>middle 使单元格内边距盒模型在该行内居中对齐。</li>
+                        <li>bottom 元素底部与所在行底部对齐</li>
+                    </ol>
+                </li>
+            </ul>
+            <div class="li-vertical-align">
+                文本垂直居中属性x <span>x前端</span>
+            </div>
         </li>
     </ul>
 </body>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>背景相关属性</title>
+    <style>
+        body {
+            background-color: gainsboro;
+        }
+        div {
+            width: 400px;
+            height: 400px;
+            border: 2px purple dotted;
+            /* 设置背景色 */
+            background-color: skyblue;
+            font-size: 40px;
+        }
+        div:nth-child(2) {
+            /* 设置背景图片 */
+            background-image: url("../../img/dahuangmao-14.png");
+            /* 设置背景图片的重复方式 */
+            background-repeat: no-repeat;
+            /* 设置背景图片的位置 推荐写两个值 水平方向 垂直方向*/
+            background-position: right bottom;
+            /* 设置背景图片的位置(使用具体像素值) 推荐写两个值 水平方向 垂直方向*/
+            background-position: 10px 30px;
+            /* 复合属性 */
+            background: skyblue url("../../img/dahuangmao-14.png") no-repeat 10px 30px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        你好
+        <p>背景色不写也会有个默认值 transparent</p>
+    </div>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        ul {
+            /* 列表符号 */
+            list-style-type: decimal;
+            /* 列表符号的位置 */
+            list-style-position: outside;
+            /* 自定义列表符号 */
+            list-style-image: url("../../img/favicon.ico");
+            /* 复合属性 */
+            list-style: decimal outside url("../../img/favicon.ico");
+        }
+        li {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <h2>CSS列表属性</h2>
+    <p>可以作用在ul ol li 元素上</p>
+    <ul>
+        <li>《热烈庆祝中国共产党成立102周年》</li>
+        <li>《中央组织部公布最新党内统计数据》</li>
+        <li>《我国制造业景气水平总体有所改善》</li>
+        <li>《健康中国 | 持续高温，小心热射病！》</li>
+    </ul>
+</body>
+</html>
