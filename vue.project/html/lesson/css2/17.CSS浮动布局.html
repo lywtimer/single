@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动布局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .leftfix {
+            float: left;
+        }
+        .rightfix {
+            float: right;
+        }
+        .clearfix::after {
+            content: '';
+            clear: both;
+            display: block;
+        }
+        .container {
+            width: 960px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .logo {
+            width: 200px;
+        }
+        .banner1 {
+            width: 540px;
+            margin: 0 10px;
+        }
+        .banner2 {
+            width: 200px;
+        }
+        .logo,.banner1,.banner2 {
+            background: #ccc;
+            height: 80px;
+            line-height: 80px;
+        }
+        .menu {
+            width: 960px;
+            height: 30px;
+            line-height: 30px;
+            margin-top: 10px;
+            background: #ccc;
+        }
+        .content {
+            margin-top: 10px;
+        }
+        .content-left-bottom {
+            margin-top: 10px;
+        }
+        .content-left-top>div {
+            width: 368px;
+            height: 198px;
+            border: 1px solid red;
+            margin-right: 10px;
+        }
+        .content-left-bottom>div {
+            width: 178px;
+            height: 198px;
+            border: 1px solid orange;
+        }
+        .content-left-bottom>div:nth-child(n+2) {
+            margin-left: 10px;
+        }
+        .content-right>div {
+            width: 188px;
+            height: 128px;
+            border: 1px solid skyblue;
+            margin-bottom: 10px;
+        }
+        .footer {
+            margin-top: 10px;
+            width: 960px;
+            height: 80px;
+            line-height: 80px;
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <nav class="container-nav clearfix">
+            <div class="logo leftfix">logo</div>
+            <div class="banner1 leftfix">banner1</div>
+            <div class="banner2 leftfix">banner2</div>
+        </nav>
+        <!-- 菜单 -->
+        <div class="menu">菜单</div>
+        <!-- 内容区 -->
+        <div class="content clearfix">
+            <div class="content-left leftfix">
+                <div class="content-left-top clearfix">
+                    <div class="leftfix">栏目一</div>
+                    <div class="leftfix">栏目二</div>
+                </div>
+                <div class="content-left-bottom clearfix">
+                    <div class="leftfix">栏目三</div>
+                    <div class="leftfix">栏目四</div>
+                    <div class="leftfix">栏目五</div>
+                    <div class="leftfix">栏目六</div>
+                </div>
+            </div>
+            <div class="content-right leftfix">
+                <div class="content-right-item">栏目七</div>
+                <div class="content-right-item">栏目八</div>
+                <div class="content-right-item">栏目九</div>
+            </div>
+        </div>
+        <!-- 底部 -->
+        <div class="footer">页脚</div>
+    </div>
+</body>
+</html>

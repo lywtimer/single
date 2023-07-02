@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>定位</title>
+    <style>
+        .outer,.outer-abs {
+            width: 500px;
+            background-color: skyblue;
+            border: 1px solid orange;
+            padding: 20px;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            color: #FFF;
+            font-size: 20px;
+        }
+        .outer>.box:nth-child(1) {
+            background-color: green;
+        }
+        .outer>.box:nth-child(2) {
+            background-color: tomato;
+            /* 相对于原来的位置,开启定位,层级就会高 */
+            position: relative;
+            left: 100px;
+            top: 100px;
+        }
+        .outer>.box:nth-child(3) {
+            background-color: purple;
+            position: relative;
+            top: -50px;
+        }
+        .outer-abs {
+            position: relative;
+        }
+        .outer-abs>.box:nth-child(1) {
+            background-color: green;
+        }
+        .outer-abs>.box:nth-child(2) {
+            background-color: tomato;
+            position: absolute;
+            top: 220px;
+            left: 20px;
+            transition: 1s all linear;
+        }
+        .outer-abs:hover .box:nth-child(2) {
+            left: 220px;
+        }
+        .outer-abs>.box:nth-child(3) {
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <hr>
+    <h2>相对定位</h2>
+    <div>
+        <ul>
+            <li>position:relative 实现相对定位</li>
+            <li>可以使用 left right top bottom 四个属性调整位置</li>
+            <li>相对定位的参考点是自己原来的位置</li>
+            <li>相对定位的特点
+                <ul>
+                    <li>不会脱离文档流</li>
+                    <li>定位元素的层级比普通元素高</li>
+                    <li>left/top 和 right/bottom 不能一起设置</li>
+                    <li>相对定位和浮动互不影响, 不推荐一起使用</li>
+                    <li>相对定位和margin互不影响, 不推荐一起使用</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="outer">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+        </div>
+    </div>
+    <hr>
+    <h2>绝对定位</h2>
+    <div>
+        <ul>
+            <li>包含块
+                <ul>
+                    <li>没有脱离文档流的元素,父元素就是包含块</li>
+                    <li>脱离文档流的元素,第一个开启定位的祖先元素,就是他的包含块,如果都没有设置,就是整个页面</li>
+                </ul>
+            </li>
+            <li>
+                绝对定位的特点
+                <ul>
+                    <li>脱离文档流,会对后面的兄弟元素,父元素有影响</li>
+                    <li>left/top 和 right/bottom 不能一起设置 </li>
+                    <li>绝对定位,浮动不能同时设置,如果同时设置,浮动失效,以定位为主 </li>
+                    <li>绝对定位的元素,也能通过margin调整,不推荐</li>
+                    <li>无论什么元素设置为绝对定位后,都变成了定位元素(宽高被内容撑开,可以自由设置宽高)</li>
+                </ul>
+            </li>
+        </ul>
+        <div>
+            <div class="outer-abs">
+                <div class="box">1</div>
+                <div class="box outer-abs-box2">2</div>
+                <div class="box">3</div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <h2>demo</h2>
+    <div>
+        <ul>
+            <li></li>
+        </ul>
+        <div></div>
+    </div>
+</body>
+</html>

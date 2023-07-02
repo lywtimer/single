@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>盒模型</title>
+    <style>
+        html {
+            font-size: 20px;
+        }
+        .div-length-unit>li:nth-of-type(2) {
+            background: green;
+            font-size: 1.5em;
+        }
+        .div-length-unit>li:nth-of-type(2)>span {
+            background: yellow;
+            font-size: 1.5em;
+        }
+        .div-length-unit>li:nth-of-type(3) {
+            background: rgb(94, 145, 94);
+            font-size: 1.5rem;
+        }
+        .div-length-unit>li:nth-of-type(3)>span {
+            background: rgb(143, 73, 131);
+            font-size: 1.5rem;
+        }
+        .div-length-unit>li:nth-of-type(4)>span {
+            background: rgb(61, 111, 139);
+            font-size: 150%;
+        }
+        .div-length-unit-box {
+            width: 10rem;
+            height: 10rem;
+            background: red;
+        }
+        .demo-display-change>div {
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+            display: inline-block;
+        }
+        .demo-display-change>div:nth-child(1) {
+            background: yellow;
+        }
+        .demo-display-change>div:nth-child(2) {
+            background: blue;
+        }
+        .demo-display-change>div:nth-child(3) {
+            background: green;
+        }
+        .box {
+            /* 内容区的宽高 */
+            width: 10rem;
+            height: 10rem;
+            /* 内边距 设置的背景色会填充内边距区域 */
+            padding: 20px;
+            /* 边框 设置的背景色会填充边框区域 */
+            border: 10px dotted red;
+            /* 外边距 不影响盒子大小 */
+            margin: 10px;
+            font-size: 2em;
+            background: gray;
+        }
+        .default-width {
+            font-size: 2rem;
+            background: gray;
+            margin: 50px;
+            padding: 50px;
+            border: 50px;
+            height: 200px;
+        }
+        .div-padding {
+            padding: 20px 40px 60px 80px;
+            background: skyblue;
+        }
+        .div-border {
+            width: 400px;
+            height: 400px;
+            background: skyblue;
+            border: solid;
+
+            border-left-width: 10px;
+            border-right-width: 20px;
+            border-top-width: 30px;
+            border-bottom-width: 40px;
+
+            border-left-color: red;
+            border-right-color: orange;
+            border-top-color: green;
+            border-bottom-color: tomato;
+
+            border-left-style: solid;
+            border-right-style: dashed;
+            border-top-style: double;
+            border-bottom-style: dotted;
+
+        }
+        .div-margin {
+            width: 400px;
+            height: 400px;
+            padding: 50px;
+            background: skyblue;
+            font-size: 20px;
+        }
+        .div-margin>.inner {
+            width: 100px;
+            height: 100px;
+            background: tomato;
+            margin: 10px;
+        }
+        .div-margin-collapse {
+            width: 400px;
+            /* height: 400px; */
+            background: gray;
+            overflow: hidden;
+        }
+        .div-margin-collapse>.inner1 {
+            width: 100px;
+            height: 100px;
+            background: orange;
+            /* 下面这行代码有问题 */
+            margin-top: 30px;
+        }
+        .div-margin-collapse>.inner2 {
+            width: 100px;
+            height: 100px;
+            background: skyblue;
+            /* 下面这行代码有问题 */
+            margin-bottom: 30px;
+        }
+        .div-margin-combine {
+            width: 400px;
+            /* height: 400px; */
+            background: transparent;
+            overflow: hidden;
+        }
+        .div-margin-combine>.inner1 {
+            width: 100px;
+            height: 100px;
+            background: orange;
+            margin-bottom: 30px;
+        }
+        .div-margin-combine>.inner2 {
+            width: 100px;
+            height: 100px;
+            background: skyblue;
+            margin-top: 30px;
+        }
+        .div-overflow {
+            width: 400px;
+            height: 400px;
+            background: skyblue;
+            overflow: hidden;
+        }
+        .div-overflow>div {
+            width: 1000px;
+            background: orange;
+
+        }
+    </style>
+</head>
+<body>
+    <h2>长度单位</h2>
+    <div>
+        <ul class="div-length-unit">
+            <li>第一种长度单位:px 像素</li>
+            <li>第二种长度单位:em 当前元素或父元素的font-size的倍数<span>看看我多大</span></li>
+            <li>第三种长度单位:rem 相对于根元素的font-size的倍数<span>看看我多大</span></li>
+            <li>第四种长度单位:% 相对于父元素的百分比<span>看看我多大</span></li>
+        </ul>
+        <div class="div-length-unit-box"></div>
+    </div>
+    <hr>
+    <h2>元素的显示模式</h2>
+    <div>
+        <ul>
+            <li>
+                块元素 block
+                <ul>
+                    <li>在页面中独占一行,从上往下排列</li>
+                    <li>默认宽度:撑满父元素</li>
+                    <li>默认高度:由内容撑开</li>
+                    <li>可以通过css设置宽高</li>
+                    <li>
+                        常用标签 
+                        html body
+                        h1 h6 hr p pre div
+                        ul ol li dl dt dd
+                        table tbody thead tfoot tr caption
+                        form option
+                    </li>
+                </ul>
+            </li>
+            <li>
+                行内元素 inline
+                <ul>
+                    <li>在页面中不独占一行,一行不能容纳的行内元素,会在下一行继续从左到右排列</li>
+                    <li>默认宽度:由内容撑开</li>
+                    <li>默认高度:由内容撑开</li>
+                    <li>无法通过css设置宽高</li>
+                    <li>
+                        常用标签 
+                        br em strong sup sub del ins 
+                        a label 
+                    </li>
+                </ul>
+            </li>
+            <li>
+                行内块元素 inline-block
+                <ul>
+                    <li>在页面中不独占一行</li>
+                    <li>默认宽度:由内容撑开</li>
+                    <li>默认高度:由内容撑开</li>
+                    <li>可以通过css设置宽高</li>
+                    <li>
+                        常用标签 
+                        img td th input textarea select button iframe 
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div class="demo-display-change">
+            <div>你好1</div>
+            <div>你好2</div>
+            <div>你好3</div>
+        </div>
+    </div>
+    <hr>
+    <h2>盒子模型的组成部分</h2>
+    <div>
+        <p>所有的元素都是盒子模型</p>
+        <p>从里到外依次是 content padding border margin</p>
+        <ul>
+            <li>margin 盒子与外界的距离</li>
+            <li>border 盒子的边框</li>
+            <li>padding 紧贴内容的补白区域</li>
+            <li>content 元素中的文本或者后台元素都是它的内容</li>
+        </ul>
+        <div class="box">好好学习</div>
+    </div>
+    <hr>
+    <h2>盒子内容区</h2>
+    <div>
+        <ul>
+            <li>width 内容区域宽度</li>
+            <li>max-width 内容区域最大宽度</li>
+            <li>min-width 内容区域最小宽度</li>
+            <li>height 内容区域高度</li>
+            <li>max-height 内容区域最大高度</li>
+            <li>min-height 内容区域最小高度</li>
+        </ul>
+        <p>注意:</p>
+        <p>max-width、min-width 一般不与 width 一起使用</p>
+        <p>max-height、min-height 一般不与 height 一起使用</p>
+    </div>
+    <hr>
+    <h2>默认宽度</h2>
+    <div>
+        <ul>
+            <li>不设置 width 属性时, 元素呈现出来的宽度</li>
+            <li>总宽度 = 父 content - 自身的左右 margin </li>
+            <li>内容区的宽度 = 父 content - 自身的左右 margin - 自身的左右 border - 自身的左右 padding</li>
+        </ul>
+        <div class="default-width">memory</div>
+    </div>
+    <hr>
+    <h2>内边距</h2>
+    <div>
+        <ul>
+            <li>padding-top</li>
+            <li>padding-right</li>
+            <li>padding-bottom</li>
+            <li>padding-left</li>
+            <li>padding: 10px; 四个方向内边距都是 10px</li>
+            <li>padding: 10px 20px; 上下 10px, 左右 20px</li>
+            <li>padding: 10px 20px 30px; 上 10px, 左右 20px, 下 30px</li>
+            <li>padding: 10px 20px 30px 40px; 上 10px, 右 20px, 下 30px, 左 40px (顺时针)</li>
+        </ul>
+        <p>注意点:</p>
+        <p>padding 不能为负数</p>
+        <p>行内元素的左右内边距没有问题.上下内边距可能导致遮挡的问题</p>
+        <p>块级元素、行内块元素没有问题.</p>
+        <div class="div-padding">memory</div>
+    </div>
+    <hr>
+    <h2>边框</h2>
+    <div>
+        <ul>
+            <li>border-*-?</li>
+            <li>* = top,bottom,left,right</li>
+            <li>? = width,color,style</li>
+        </ul>
+        <div class="div-border">memory</div>
+    </div>
+    <hr>
+    <h2>外边距</h2>
+    <div>
+        <ul>
+            <li>属性样式与padding一致</li>
+            <li>子元素的margin是参考父元素的content计算的</li>
+            <li>上左 margin 影响自身的位置, 下右 margin 影响兄弟的位置</li>
+            <li>行内元素,左右的margin可以完美设置.上下的margin设置无效</li>
+            <li>对于块级元素,margin的值可以是auto,左右margin设置auto可以实现在父元素内水平居中</li>
+            <li>margin的值可以是负数</li>
+            <li>margin的塌陷问题结局方案
+                <ol>
+                    <li>给父元素设置不为0的padding</li>
+                    <li>给父元素设置宽度不为0的border</li>
+                    <li>overflow: hidden;</li>
+                </ol>
+            </li>
+            <li>
+                上下铺兄弟的margin合并问题
+                <ol>
+                    <li>上面兄弟元素的下外边距和下面兄弟的上外边距会合并,取一个最大值,而不是相加</li>
+                    <li>无需解决,只给一个设置上下外边距就可以了</li>
+                </ol>
+            </li>
+        </ul>
+        <div class="div-margin">
+            <div class="inner">memory1</div>
+            <div class="inner">memory2</div>
+            <div class="inner">memory3</div>
+        </div>
+        <div class="div-margin-collapse">
+            <div class="inner1">1</div>
+            <div class="inner2">2</div>
+            <p>我是一段测试的文字</p>
+        </div>
+        <div class="div-margin-combine">
+            <div class="inner1">1</div>
+            <div class="inner2">2</div>
+            <p>我是一段测试的文字</p>
+        </div>
+    </div>
+    <hr>
+    <h2>处理内容溢出</h2>
+    <div>
+        <ul>
+            <li>
+                overflow 溢出内容的处理方式
+                <ol>
+                    <li>visible 显示,默认值</li>
+                    <li>hidden 隐藏</li>
+                    <li>scroll 显示滚动条,不论内容是否溢出</li>
+                    <li>auto 自动显示滚动条</li>
+                </ol>
+            </li>
+            <li>不建议使用overflow-x overflow-y</li>
+        </ul>
+        <div class="div-overflow">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias consequuntur quia temporibus vero sed repellat adipisci! Delectus, dicta explicabo! Magnam consequatur reiciendis doloremque exercitationem veritatis. Praesentium aliquid fugit nostrum voluptas temporibus molestiae aut, quidem voluptatibus sapiente maiores tenetur soluta nesciunt deserunt quaerat nulla at. Est, 
+            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias quos repudiandae voluptas suscipit impedit sit veritatis libero praesentium, atque reiciendis in magni mollitia minus placeat asperiores illum explicabo, ab necessitatibus.</div>
+            consequatur incidunt? Possimus dolore quisquam, rerum vero assumenda, est expedita iusto esse magni consequuntur omnis similique asperiores facere aperiam labore cupiditate. Corporis rerum molestiae optio distinctio excepturi ad mollitia commodi, sint nihil amet iusto maiores magnam magni dolor 
+        </div>
+    </div>
+    <hr>
+    <h2>隐藏元素的两种方式</h2>
+    <div>
+        <ul>
+            <li>visibility属性,默认show,可以设置为hidden,元素虽然隐藏,但是还占有原来的位置</li>
+            <li>display:none; 彻底隐藏元素,不占用任何位置</li>
+        </ul>
+    </div>
+    <hr>
+    <h2>样式的继承</h2>
+    <div>
+        <ul>
+            <li>
+                会继承的css属性
+                字体属性、文本属性(除了vertical-align)、文字颜色等.
+            </li>
+            <li>
+                不会继承的css属性
+                边框、背景、内边距、外边距、宽高、溢出方式等.
+            </li>
+            <li>
+                总结:能继承的属性,都是不影响布局的.
+            </li>
+        </ul>
+    </div>
+    <hr>
+    <h2>元素的默认样式</h2>
+    <div>
+        <ul>
+            <li>
+                继承的样式优先级最低
+            </li>
+            <li>
+                元素一般都有些默认样式
+                <ul>
+                    <li>a 元素</li>
+                    <li>h1~h6 元素</li>
+                    <li>p 元素</li>
+                    <li>ul ol 元素</li>
+                    <li>body 元素</li>
+                </ul>
+            </li>
+      
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>布局</title>
+    <style>
+        .box-outer {
+            width: 400px;
+            height: 400px;
+            background: gray;
+            overflow: hidden;
+            margin-top: 5px;
+            text-align: center;
+            line-height: 400px;
+            font-size: 0px;
+        }
+        .box-outer>.inner {
+            font-size: 40px;
+            width: 200px;
+            height: 100px;
+            background: tomato;
+            margin: 0 auto;
+            margin-top: 150px;
+            text-align: center;
+            line-height: 100px;
+        }
+        .box-outer>img {
+            vertical-align: middle;
+        }
+        .box-outer>.inner-span {
+            font-size: 40px;
+            vertical-align: middle;
+            background: tomato;
+        }
+        .box-spacing {
+            height: 200px;
+            background: gray;
+            font-size: 0;
+        }
+        .box-spacing>span {
+            font-size: 1rem;
+        }
+        .box-spacing>span:nth-child(1) {
+            background: skyblue;
+        }
+        .box-spacing>span:nth-child(2) {
+            background: orange;
+        }
+        .box-spacing>span:nth-child(3) {
+            background: green;
+        }
+        .box-block-spacing {
+            width: 600px;
+            background: skyblue;
+            font-size: 0;
+        }
+        .box-block-spacing>img {
+            vertical-align: bottom;
+        }
+        .box-block-spacing>span {
+            font-size: 1rem;
+            vertical-align: bottom;
+        }
+        .box-float {
+            width: 600px;
+            height: 300px;
+            background: skyblue;
+            margin-bottom: 1rem;
+        }
+        .box-float>img {
+            float: right;
+            margin-left: 0.5rem;
+        }
+        .box-float-letter::first-letter {
+            color: red;
+            font-size: 40px;
+            float: left;
+        }
+        .box-float-features {
+            width: 800px;
+            height: 400px;
+            background: gray;
+            padding: 10px;
+            text-align: center;
+        }
+        .box-float-features>.box {
+            font-size: 20px;
+            padding: 10px;
+        }
+        .box-float-features>.box:nth-child(1) {
+            background: skyblue;
+        }
+        .box-float-features>.box:nth-child(2) {
+            background: orange;
+            float: left;
+        }
+        .box-float-features>.box:nth-child(3) {
+            background: tomato;
+        }
+        .box-float-features-t1,
+        .box-float-features-t2
+        {
+            width: 500px;
+            background: gray;
+            border: 2px solid tomato;
+        }
+      
+        .box-float-item {
+            width: 100px;
+            height: 100px;
+            background: skyblue;
+            border: 1px solid yellow;
+            margin: 10px;
+        }
+        .box-float-features-t1>.box-float-item:nth-child(1) {
+            float: left;
+        }
+        .box-float-features-t2>.box-float-item {
+            float: left;
+        }
+        .box-float-features-t2>.box-float-item:last-child {
+            float: none;
+        }
+        .box-float-features-t2::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <h2>布局技巧</h2>
+    <div>
+        <ul>
+            <li>
+                行内元素、行内块元素,可以被父元素当做文本处理.
+                <p>可以使用 text-align line-height text-indent 等</p>
+            </li>
+            <li>
+                如何让子元素在父元素中水平居中
+                <ul>
+                    <li>块元素,在该元素上加上 margin: 0 auto;</li>
+                    <li>行内元素、行内块元素, 给父元素加上 text-align: center;</li>
+                </ul>
+            </li>
+            <li>
+                如何让子元素在父元素中垂直居中
+                <ul>
+                    <li>块元素,在该元素上加上 margin-top: (content - 子元素盒模型总高)/2;</li>
+                    <li>
+                        行内元素、行内块元素:
+                        <ul>
+                            <li>父元素 line-heigh = height, 子元素都加上: vertical-align: middle;</li>
+                            <li>父元素的font-size=0px; 子元素恢复正常的font-size</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+      
+        </ul>
+        <div class="box-outer">
+            <div class="inner">memory</div>
+        </div>
+        <div class="box-outer">
+            <span class="inner-span">memory</span>
+        </div>
+        <div class="box-outer">
+                <span class="inner-span">memory</span><img src="../../img/dahuangmao-14.png" alt="">
+        </div>
+    </div>
+    <hr>
+    <h2>元素之间的空白问题</h2>
+    <div>
+        <ul>
+            <li>行内元素、行内块元素,彼此之间的换行会解析成一个空白字符</li>
+            <li>解决方案一:去掉换行和空格(不推荐)</li>
+            <li>解决方案二:父元素设置font-size:0;子元素再恢复回来</li>
+        </ul>
+        <div>
+            <div class="box-spacing">
+                <span>人之初</span>
+                <span>性本恶</span>
+                <span>习相远</span>
+                <hr>
+                <img src="../../img/kong.png" alt="">
+                <img src="../../img/kong.png" alt="">
+                <img src="../../img/kong.png" alt="">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <h2>行内块元素的幽灵空白问题</h2>
+    <div>
+        <ul>
+            <li>产生原因:行内块元素与文本的基线对齐</li>
+            <li>解决方案:
+                <ul>
+                    <li>行内块设置 vertical-align, 值不为baseline即可</li>
+                    <li>父元素中只有一张图片,可以把图设置为display:block</li>
+                    <li>父元素设置 font-size:0; 如果内部还有文字,需要单独设置font-size和vertical-align</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="box-block-spacing">
+            <img src="../../img/kong.png" alt="">
+            <span>xg</span> 
+        </div>
+    </div>
+    <hr>
+    <h2>浮动</h2>
+    <div>
+        <ul>
+            <li>最初,浮动是用来实现文字环绕图片效果的,现在是页面布局方式之一</li>
+        </ul>
+        <div>
+            <div class="box-float">
+                <img src="../../img/kong.png" alt="">
+                孙悟空（又称齐天大圣、孙行者、斗战胜佛），是中国古典神魔小说《西游记》中的主要角色之一（传为吴承恩所著）。 由开天辟地产生的仙石孕育而生，出生地位于东胜神洲的花果山上，因带领猴群进入水帘洞而被尊为“美猴王”。 为了学艺而漂洋过海拜师于须菩提祖师，得名孙悟空，学会大品天仙诀、地煞数七十二变、筋斗云等高超的法术。
+            </div>
+            <div class="box-float box-float-letter">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo molestiae maxime quaerat in natus delectus impedit tempora ab quas, atque eaque facilis possimus error nemo odio tenetur recusandae, sint obcaecati.    
+            </div>
+        </div>
+    </div>
+    <hr>
+    <h2>元素浮动后的特点</h2>
+    <div>
+        <ul>
+            <li>脱离文档流</li>
+            <li>不管浮动前是什么元素,浮动后:默认宽高都是被内容撑开</li>
+            <li>不会独占一行,可以与其他元素共用一行</li>
+            <li>不会 margin 合并/塌陷 能够完美设置 marging 和 padding</li>
+            <li>不会像行内块一样被当做文本处理(没有行内块的空白问题)</li>
+            <li>
+                浮动后的影响
+                <ul>
+                    <li>对兄弟元素的影响: 后面的兄弟元素,会占据浮动元素之前的位置,在浮动元素下面;对前面的兄弟无影响.</li>
+                    <li>对父元素的影响: 不能撑起父元素的高度,导致父元素塌陷; 但父元素的宽度依然可以束缚浮动的元素.</li>
+                </ul>
+            </li>
+            <li>
+                清除浮动
+                <ul>
+                    <li>给父元素指定高度</li>
+                    <li>给父元素设置浮动</li>
+                    <li>给父元素设置 overflow:hidden</li>
+                    <li>在所有浮动元素后面添加一个块元素,并设置 clear:both</li>
+                    <li>通过伪元素设置 clear:both</li>
+                    <li>布局中有一个原则:设置浮动的时候,兄弟元素要么全部浮动,要么全部不浮动</li>
+                </ul>
+            </li>
+        </ul>
+        <div>
+            <div class="box-float-features">
+                <div class="box">1</div>
+                <div class="box">2</div>
+                <div class="box">3</div>
+            </div>
+            <hr>
+            <div class="box-float-features-t1">
+                <div class="box-float-item">1</div>
+                <div class="box-float-item">2</div>
+                <div class="box-float-item">3</div>
+            </div>
+            <hr>
+            <div class="box-float-features-t2">
+                <div class="box-float-item">1</div>
+                <div class="box-float-item">2</div>
+                <div class="box-float-item">3</div>
+                <div class="box-float-item">4</div>
+            </div>
+            <hr>
+
+        </div>
+    </div>
+    <hr>
+    <h2>demo</h2>
+    <div>
+        <ul>
+            <li></li>
+        </ul>
+        <div></div>
+    </div>
+</body>
+</html>
