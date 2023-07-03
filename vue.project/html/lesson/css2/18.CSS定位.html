@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <title>定位</title>
     <style>
-        .outer,.outer-abs {
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .outer,.outer-abs,.outer-fix {
             width: 500px;
             background-color: skyblue;
             border: 1px solid orange;
@@ -50,6 +54,38 @@
         .outer-abs>.box:nth-child(3) {
             background-color: purple;
         }
+        .outer-fix>.box:nth-child(1) {
+            background-color: green;
+        }
+        .outer-fix>.box:nth-child(2) {
+            background-color: tomato;
+            position: fixed;
+            left: 100px;
+            top: 100px;
+        }
+        .outer-fix>.box:nth-child(3) {
+            background-color: purple;
+            /* position: relative; */
+            /* top: -50px; */
+        }
+        .outer-sticky {
+            position: sticky;
+        }
+        .box-content {
+            background-color: yellowgreen;
+            height: 80px;
+            margin-top: 10px;
+        }
+        .box-content:last-child {
+            height: 400px;
+        }
+        .box-content-nav {
+            background-color: gray;
+            height: 80px;
+            margin-top: 10px;
+            position: sticky;
+            top: 0;
+        }
     </style>
 </head>
 <body>
@@ -80,6 +116,8 @@
     <h2>绝对定位</h2>
     <div>
         <ul>
+            <li>position:absolute</li>
+            <li>可以使用 left right top bottom 四个属性调整位置</li>
             <li>包含块
                 <ul>
                     <li>没有脱离文档流的元素,父元素就是包含块</li>
@@ -102,6 +140,67 @@
                 <div class="box">1</div>
                 <div class="box outer-abs-box2">2</div>
                 <div class="box">3</div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <h2>固定定位</h2>
+    <div>
+        <ul>
+            <li>position:fixed</li>
+            <li>可以使用 left right top bottom 四个属性调整位置</li>
+            <li>参考位置:视口</li>
+            <li>
+                固定定位的特点
+                <ul>
+                    <li>脱离文档流,会对后面的兄弟元素,父元素有影响</li>
+                    <li>left/top 和 right/bottom 不能一起设置 </li>
+                    <li>固定定位,浮动不能同时设置,如果同时设置,浮动失效,以定位为主 </li>
+                    <li>固定定位的元素,也能通过margin调整,不推荐</li>
+                    <li>无论什么元素设置为固定定位后,都变成了定位元素(宽高被内容撑开,可以自由设置宽高)</li>
+                </ul>
+            </li>
+        </ul>
+        <div>
+            <div class="outer-fix">
+                <div class="box">1</div>
+                <div class="box">2</div>
+                <div class="box">3</div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <h2>粘性定位</h2>
+    <div>
+        <ul>
+            <li>position:sticky</li>
+            <li>可以使用 left right top bottom 四个属性调整位置</li>
+            <li>参考位置:离它最近的一个拥有"滚动机制"的祖先元素,即便这个祖先不是最近的真实可滚动祖先</li>
+            <li>
+                固定定位的特点
+                <ul>
+                    <li>脱离文档流,它是专门用于窗口滚动时的新的定位方式</li>
+                    <li>最常用的值是 top </li>
+                    <li>粘性定位和浮动可以同时设置,不推荐</li>
+                    <li>粘性定位的元素,也能通过margin调整,不推荐</li>
+                    <li>粘性定位和相对定位的特点基本一致,不同的是达到某个位置时将其固定</li>
+                </ul>
+            </li>
+        </ul>
+        <div>
+            <div class="outer-sticky">
+                <div class="box-content">1</div>
+                <div class="box-content">2</div>
+                <div class="box-content">3</div>
+                <div class="box-content-nav">A</div>
+                <div class="box-content">4</div>
+                <div class="box-content">5</div>
+                <div class="box-content">6</div>
+                <div class="box-content-nav">B</div>
+                <div class="box-content">7</div>
+                <div class="box-content">8</div>
+                <div class="box-content">9</div>
+                <div class="box-content">10</div>
             </div>
         </div>
     </div>
