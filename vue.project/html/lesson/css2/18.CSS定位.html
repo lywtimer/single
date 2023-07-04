@@ -8,7 +8,7 @@
             margin: 0;
             padding: 0;
         }
-        .outer,.outer-abs,.outer-fix {
+        .outer,.outer-abs,.outer-fix,.outer-level {
             width: 500px;
             background-color: skyblue;
             border: 1px solid orange;
@@ -85,6 +85,31 @@
             margin-top: 10px;
             position: sticky;
             top: 0;
+        }
+        .outer-level {
+            position: relative;
+        }
+        .outer-level>.box:nth-child(1) {
+            background-color: green;
+        }
+        .outer-level>.box:nth-child(2) {
+            position: relative;
+            top: -150px;
+            left: 50px;
+            background-color: purple;
+            z-index: 0;
+        }
+        .outer-level>.box:nth-child(3) {
+            background-color: tomato;
+            position: absolute;
+            top: 120px;
+            left: 120px;
+        }
+        .outer-level>.box:nth-child(4) {
+            background-color: orange;
+            position: fixed;
+            top: 750px;
+            left: 170px;
         }
     </style>
 </head>
@@ -205,12 +230,47 @@
         </div>
     </div>
     <hr>
-    <h2>demo</h2>
+    <h2>定位的层级</h2>
     <div>
         <ul>
-            <li></li>
+            <li>定位元素的显示层级比普通元素高,无论什么定位,显示层级一样</li>
+            <li>如果发生重叠,后面的元素会显示在前面元素的上面</li>
+            <li>通过 z-index 调整显示层级</li>
+            <li>z-index 的属性值是数字,没有单位,数值越大显示层级越高</li>
+            <li>只有定位的元素设置 z-index 才有效</li>
+            <li>如果 z-index 大的元素没有盖住 z-index 小的元素, 检查其包含块的层级</li>
         </ul>
-        <div></div>
+        <div>
+            <div class="outer-level">
+                <div class="box">1</div>
+                <div class="box">2</div>
+                <div class="box">3</div>
+                <div class="box">4</div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <h2>定位的特殊应用</h2>
+    <div>
+        <ul>
+            <li>
+                让定位元素的宽充满包含块
+                <ul>
+                    <li>块宽想与包含块一致;给定位元素设置left 0; right 0;</li>
+                    <li>高度想与包含块一致;给定位元素设置top 0; bottom 0;</li>
+                </ul>
+            </li>
+            <li>
+                让定位元素在包含块中居中
+                <ul>
+                    <li>left,right,top,bottom:0; + margin:auto;</li>
+                    <li>left,top:50%; + margin-left,margin-top:负的宽/高一半;</li>
+                </ul>
+            </li>
+        </ul>
+        <div>
+
+        </div>
     </div>
 </body>
 </html>
