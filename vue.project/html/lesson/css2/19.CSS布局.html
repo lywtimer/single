@@ -38,6 +38,49 @@
         </div>
     </div>
     <hr>
+    <h2>重置默认样式</h2>
+    <div>
+        <ul>
+            <li>
+                很多元素都有默认样式
+                <p>早期,元素默认样式可以让我们快速的绘制网页</p>
+                <ul>
+                    <li>p 元素有默认的上下 margin</li>
+                    <li>h1~h6 元素有默认的上下 margin,且字体加粗</li>
+                    <li>body 元素有默认的 8px 外边距</li>
+                    <li>a 元素有默认的 文字颜色和下划线</li>
+                    <li>ul 元素有默认的 left-padding</li>
+                </ul>
+            </li>
+            <li>
+                方案一:使用全局选择器
+                <pre>
+                    * {
+                        margin: 0;
+                        padding: 0;
+                    }
+                </pre>
+            </li>
+            <li>
+                方案二:reset.css
+                <p>选择到具有默认样式的元素,清空其默认的样式.</p>
+            </li>
+            <li>
+                方案三:Normalize.css
+                <p>是一种最新方案,它在清除默认样式的基础上,保留了一些有价值的默认样式.</p>
+                <p>https://github.com/necolas/normalize.css</p>
+                相对于 reset.css， Normalize.css 有如下优点
+                <ul>
+                    <li>保护了有价值的默认样式，而不是完全去掉它们。</li>
+                    <li>为大部分HTML元素提供一般化的样式。</li>
+                    <li>新增对 HTML5 元素的设置</li>
+                    <li>对并集选择器的使用比较谨慎，有效避免调试工具杂乱。</li>
+                </ul>
+            </li>
+        </ul>
+        <div></div>
+    </div>
+    <hr>
     <h2>demo</h2>
     <div>
         <ul>
