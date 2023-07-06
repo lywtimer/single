@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5笔记</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        header {
+            height: 39px;
+            line-height: 39px;
+            background-color: #8bb993;
+        }
+        .container {
+            width: 1190px;
+            margin: 0 auto;
+        }
+        nav {
+            position: fixed;
+            font-weight: 600;
+            border: 1px solid #DD302D;
+        }
+        nav>ul{
+            padding: 0;
+            list-style: none inside;
+        }
+        nav>ul>li{
+            list-style: none inside;
+        }
+        nav a {
+            padding: 5px 10px;
+            display: block;
+        }
+        nav a:hover {
+            padding: 5px 10px;
+            color: #fff;
+            background-color: #DD302D;
+
+            text-decoration: none;
+        }
+
+        #new-labels {
+            height: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+    <nav>
+        <ul>
+            <li><a href="#">HTML5简介</a></li>
+            <li><a href="#new-labels">新增语义化标签</a></li>
+            <li><a href="#form-new-features">新增表单功能</a></li>
+        </ul>
+    </nav>
+    <article class="container">
+        <section id="new-labels">
+            <h2>二、新增语义化标签</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>标签名</th>
+                        <th>语义</th>
+                        <th>单/双标签</th>
+                    </tr>
+                </thead>
+            </table>
+        </section>
+        <section id="form-new-features">
+            <h2>三、新增表单功能</h2>
+            <h4>1. 表单控件新增属性</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>标签名</th>
+                        <th>语义</th>
+                        <th>单/双标签</th>
+                    </tr>
+                </thead>
+            </table>
+            <p></p>
+            <div>
+                <form action="">
+                    账号: <input type="text" name="account" placeholder="请输入账号" required>
+                    <br>
+                    密码: <input type="password" name="pwd" id="">
+                    <br>
+                    性别: 
+                        <input type="radio" name="gendar" value="male" id="">男
+                        <input type="radio" name="gendar" value="female" id="">女
+                    <br>
+                    爱好:
+                        <input type="checkbox" name="hobby" value="smoke" id="">抽烟
+                        <input type="checkbox" name="hobby" value="drink" id="">喝酒
+                        <input type="checkbox" name="hobby" value="perm" id="">烫头
+                    <br>
+                    地区:
+                        <select name="city" id="" autofocus>
+                            <option value="0"></option>
+
+                            <option value="1">北京</option>
+                            <option value="2">上海</option>
+                        </select>
+                    <br>
+
+                    其它:
+                    <textarea name="other" id="" cols="30" rows="10"></textarea>
+                    <br>
+                    <button>提交</button>
+                </form>
+            </div>
+        </section>
+    </article>
+    <footer></footer>
+</body>
+</html>

@@ -1,0 +1,112 @@
+/* 基础设置 */
+.container {
+    width: 1190px;
+    margin: 0 auto;
+}
+/* #region 顶部导航*/
+.topbar {
+    height: 30px;
+    background-color: #ECECEC;
+}
+.topbar-welcome,.topbar-nav {
+    height: 30px;
+    line-height: 30px;
+    font-size: 0;
+    color: #666;
+}
+.topbar-welcome span,.topbar-welcome a,.topbar-nav a {
+    font-size: 12px;
+}
+.topbar-welcome .hello {
+    margin-right: 28px;
+}
+.topbar-welcome .login {
+    padding-right: 10px;
+    border-right: 1px solid #666;
+}
+.topbar-welcome .register {
+    padding-left: 10px;
+}
+.topbar-nav .nav>li {
+    float: left;
+}
+.topbar-nav .nav>li a {
+    padding: 0 15px;
+    border-right: 1px solid #666;
+}
+.topbar-nav .nav>li:first-child a {
+    padding-left: 0;
+}
+.topbar-nav .nav>li:last-child a {
+    padding-right: 0;
+    border: none;
+}
+/* #endregion 顶部导航*/
+/* #region 头部*/
+.header {
+    height: 120px;
+    font-size: 0;
+} 
+.header .search form {
+    margin-top: 42px;
+}
+.header .search input {
+    width: 508px;
+    height: 34px;
+    border: 1px solid #DD302D;
+}
+.header .search button {
+    width: 80px;
+    height: 36px;
+    background: #DD302D url("../images/serch_icon.png") no-repeat 28px 6px;
+    vertical-align: bottom;
+}
+/* #endregion 头部*/
+/* #region 主导航*/
+.main-nav {
+    height: 48px;
+    border-bottom: 1px solid #DD302D ;
+    font-weight: 500;
+}
+.main-nav .category {
+    width: 190px;
+    background-color: #DD302D;
+    color: #FFF;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    font-size: 16px;
+}
+.main-nav .nav {
+    height: 48px;
+    line-height: 48px;
+}
+.main-nav .nav>li {
+    float: left;
+    margin: 0 10px;
+    font-size: 16px;
+}
+/* #endregion 主导航*/
+/* #region 主内容*/
+.main-content .container {
+    
+}
+.main-content .slide-nav {
+    width: 190px;
+    height: 458px;
+}
+.main-content .banner {
+    background-color: aquamarine;
+    width: 690px;
+    height: 458px;
+    margin: 0 10px;
+}
+.main-content .slide-other {
+    background-color: yellowgreen;
+    width: 290px;
+    height: 458px;
+}
+/* #endregion 主内容*/
+
+/* #region demo*/
+/* #endregion demo*/
