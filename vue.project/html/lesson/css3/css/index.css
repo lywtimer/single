@@ -1,0 +1,475 @@
+/* 基础设置 */
+.container {
+    width: 1190px;
+    margin: 0 auto;
+}
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: deepskyblue;
+    margin-bottom: 10px;
+}
+.box-vw {
+    width: 20vw;
+    height: 10vh;
+    background-color: tomato; 
+}
+.box-sizing {
+    padding: 5px;
+    border: 5px solid gray;
+    background-color: orange;
+    box-sizing: border-box;
+}
+.box-resize {
+    background-color: green;
+    resize: both;
+    overflow: hidden;
+}
+.box-shadow {
+    background-color: tomato;
+    margin: 20px auto;
+    position: relative;
+    top: 0;
+    transition: 0.4s linear all;
+}
+.box-shadow:hover {
+    box-shadow: 0px 0px 30px gold;
+    top: -2px;
+}
+.box-opacity {
+    background-color: yellowgreen;
+    line-height: 200px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 900;
+    opacity: 0.5;
+}
+.image-opacity {
+    position: relative;
+}
+.image-opacity>h2 {
+    position: absolute;
+    top: 240px;
+    left: 120px;
+    opacity: 0.2;
+    background-color: gold;
+}
+.box-background-origin {
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    font-size: 40px;
+    background-color: deepskyblue;
+    padding: 50px;
+    border: 50px dashed rgba(255, 0, 0, 0.5);
+    background-image: url("../images/bg01.jpg");
+    background-origin: content-box;
+    margin-bottom: 10px;
+}
+.box-background-clip {
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    font-size: 100px;
+    color: transparent;
+    background-color: deepskyblue;
+    padding: 50px;
+    border: 50px dashed rgba(255, 0, 0, 0.5);
+    background-image: url("../images/bg02.jpg");
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+    -webkit-background-clip: text;
+}
+.box-background-size {
+    width: 400px;
+    height: 400px;
+    background-image: url("../images/bg03.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid gold;
+
+}
+.box-background-multi {
+    width: 400px;
+    height: 400px;
+    background: url('../images/bg-lt.png') no-repeat left top,
+                url('../images/bg-rt.png') no-repeat right top,
+                url('../images/bg-lb.png') no-repeat left bottom,
+                url('../images/bg-rb.png') no-repeat right bottom;
+    
+}
+.border-radius {
+    border-radius: 50%;
+}
+.border-radius-left-bottom {
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+.text-shadow-demo {
+    font-size: 80px;
+    text-align: center;
+    color: white;
+    text-shadow: 5px 5px 10px red ;
+}
+.text-box {
+    margin: 10px auto;
+    border: 1px solid black;
+    width: 400px;
+}
+.text-box-space {
+    white-space: pre-line;
+}
+.text-box-overflow ul {
+    font-size: 20px;
+    list-style: none;
+    padding-left: 0;
+}
+.text-box-overflow ul li {
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.text-box-decoration {
+    text-decoration: line-through dashed red;
+}
+.text-box-stroke {
+    font-size: 30px;
+    color: transparent;
+    -webkit-text-stroke: #DD302D 1px;
+}
+.box-gradient {
+    width: 300px;
+    height: 200px;
+    border: 1px solid black;
+    float: left;
+    margin-left: 10px;
+}
+.box-linear-gradient {
+    background-image: linear-gradient(red,yellow,green);
+}
+.box-linear-gradient-right {
+    background-image: linear-gradient(to right top, red,yellow,green);
+}
+.box-linear-gradient-deg {
+    background-image: linear-gradient(20deg, red,yellow,green);
+}
+.box-linear-gradient-height {
+    background-image: linear-gradient(red 50px,yellow 100px,green 150px);
+}
+.box-linear-gradient-font {
+    color: transparent;
+    font-size: 40px;
+    text-align: center;
+    line-height: 200px;
+    font-weight: 900;
+    background-image: linear-gradient(20deg, red 50px,yellow 100px,green 150px);
+    -webkit-background-clip: text;
+}
+.box-ball {
+    width: 200px;
+    height: 200px;
+    background-image: radial-gradient(at 60px 60px, white, #333);
+    border-radius: 50%;
+}
+.box-page {
+    width: 600px;
+    height: 800px;
+    padding: 20px;
+    border: 1px solid #000;
+    background-clip: content-box;
+    background-image: repeating-linear-gradient(transparent 0px,transparent 29px,gray 30px);
+    margin: 10px auto;
+}
+.transform-outer {
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    margin: 50px auto;
+}
+.transform-inner {
+    width: 200px;
+    height: 200px;
+    background-color: skyblue;
+    transform: translateY(-10px)  rotate(30deg) skew(0deg);
+}
+.transform-3d-outer {
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    margin: 50px auto;
+    transform-style: preserve-3d;
+    perspective: 100px;
+}
+.transform-3d-inner {
+    width: 200px;
+    height: 200px;
+    background-color: skyblue;
+    transform: rotateX(30deg);
+}
+.transition-box {
+    width: 200px;
+    height: 200px;
+    opacity: 0.5;
+    background-color: orange;
+    /* transition-property: width,height; */
+    transition-property: all;
+    transition-duration: 3s;
+}
+.transition-box:hover {
+    width: 600px;
+}
+.transition-box-function {
+    width: 1300px;
+    height: 900px;
+    border: 1px solid black;
+}
+.transition-box-function:hover .transition-box-function-item {
+    width: 1300px;
+}
+.transition-box-function-item {
+    width: 200px;
+    height: 100px;
+    transition-property: all;
+    /* 过度时间 */
+    transition-duration: 5s;
+    /* 过度延迟 */
+    /* transition-delay: 2s; */
+}
+.transition-box-function-item:nth-child(1) {
+    background-color: orange;
+    transition-timing-function: ease;
+}
+.transition-box-function-item:nth-child(2) {
+    background-color: skyblue;
+    transition-timing-function: linear;
+}
+.transition-box-function-item:nth-child(3) {
+    background-color: chartreuse;
+    transition-timing-function: ease-in;
+}
+.transition-box-function-item:nth-child(4) {
+    background-color: chocolate;
+}
+.transition-box-function-item:nth-child(5) {
+    background-color: green;
+}
+.transition-box-function-item:nth-child(6) {
+    background-color: yellow;
+}
+.transition-box-function-item:nth-child(7) {
+    background-color: ghostwhite;
+}
+.transition-box-function-item:nth-child(8) {
+    background-color: orange;
+}
+.transition-box-function-item:nth-child(9) {
+    background-color: tomato;
+}
+.transition-box-demo {
+    width: 400px;
+    height: 224px;
+    margin: 20px auto;
+    border: 1px solid black;
+    position: relative;
+    overflow: hidden;
+}
+.transition-box-demo>img {
+    transition: 2s linear all;
+}
+.transition-box-demo:hover>img {
+    transform: scale(1.5) rotate(20deg);
+}
+.transition-box-demo:hover>.mask {
+    opacity: 0.5;
+}
+.transition-box-demo>.mask {
+    text-align: center;
+    width: 400px;
+    height: 224px;
+    line-height: 224px;
+    background-color: #000;
+    color: #FFF;
+    opacity: 0;
+    font-size: 80px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 1s linear all;
+    cursor: pointer;
+}
+.animation-box {
+    width: 1000px;
+    height: 100px;
+    border: 1px solid black;
+
+}
+.animation-box:hover .animation-box-inner {
+    animation-play-state: paused;
+}
+.animation-box-inner {
+    width: 100px;
+    height: 100px;
+    background-color: deepskyblue;
+    /* 应用动画到元素 */
+    animation-name: hello2;
+    animation-duration: 3s;
+    animation-delay: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+/* 定义一个动画 - 第一种方式 */
+@keyframes hello {
+    /* 第一帧 */
+    from {
+        transform: translate(10px);
+    }
+    /* 最后一帧 */
+    to {
+        transform: translate(900px);
+        background-color: #DD302D;
+    }
+}
+/* 定义一个动画 - 第二种方式 */
+@keyframes hello2 {
+    /* 第一帧 */
+    0% {
+        transform: translate(10px);
+    }
+    25% {
+        position: relative;
+        top: 120px;
+    }
+    50% {
+        top: -120px;
+    }
+    /* 最后一帧 */
+    100% {
+        transform: translate(900px) rotate(360deg);
+        background-color: #DD302D;
+        border-radius: 50%;
+    }
+}
+.animation-demo {
+    width: 130px;
+    height: 130px;
+    margin: 20px auto;
+    background-image: url('../images/bike.png');
+    animation: bike-run 2s  0.5s steps(31) infinite;
+}
+@keyframes bike-run {
+    from{}
+    to{
+        background-position: 0px -4030px;
+    }
+}
+/* #F4F8F4  #8BB688  */
+/* #region 顶部导航*/
+.topbar {
+    height: 30px;
+    background-color: #ECECEC;
+}
+.topbar-welcome,.topbar-nav {
+    height: 30px;
+    line-height: 30px;
+    font-size: 0;
+    color: #666;
+}
+.topbar-welcome span,.topbar-welcome a,.topbar-nav a {
+    font-size: 12px;
+}
+.topbar-welcome .hello {
+    margin-right: 28px;
+}
+.topbar-welcome .login {
+    padding-right: 10px;
+    border-right: 1px solid #666;
+}
+.topbar-welcome .register {
+    padding-left: 10px;
+}
+.topbar-nav .nav>li {
+    float: left;
+}
+.topbar-nav .nav>li a {
+    padding: 0 15px;
+    border-right: 1px solid #666;
+}
+.topbar-nav .nav>li:first-child a {
+    padding-left: 0;
+}
+.topbar-nav .nav>li:last-child a {
+    padding-right: 0;
+    border: none;
+}
+/* #endregion 顶部导航*/
+/* #region 头部*/
+.header {
+    height: 120px;
+    font-size: 0;
+} 
+.header .search form {
+    margin-top: 42px;
+}
+.header .search input {
+    width: 508px;
+    height: 34px;
+    border: 1px solid #DD302D;
+}
+.header .search button {
+    width: 80px;
+    height: 36px;
+    background: #DD302D url("../images/serch_icon.png") no-repeat 28px 6px;
+    vertical-align: bottom;
+}
+/* #endregion 头部*/
+/* #region 主导航*/
+.main-nav {
+    height: 48px;
+    border-bottom: 1px solid #DD302D ;
+    font-weight: 500;
+}
+.main-nav .category {
+    width: 190px;
+    background-color: #DD302D;
+    color: #FFF;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    font-size: 16px;
+}
+.main-nav .nav {
+    height: 48px;
+    line-height: 48px;
+}
+.main-nav .nav>li {
+    float: left;
+    margin: 0 10px;
+    font-size: 16px;
+}
+/* #endregion 主导航*/
+/* #region 主内容*/
+.main-content .container {
+    
+}
+.main-content .slide-nav {
+    width: 190px;
+    height: 458px;
+}
+.main-content .banner {
+    background-color: aquamarine;
+    width: 690px;
+    height: 458px;
+    margin: 0 10px;
+}
+.main-content .slide-other {
+    background-color: yellowgreen;
+    width: 290px;
+    height: 458px;
+}
+/* #endregion 主内容*/
+
+/* #region demo*/
+/* #endregion demo*/

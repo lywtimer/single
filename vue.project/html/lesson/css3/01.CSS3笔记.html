@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>CSS3笔记</title>
+</head>
+<body>
+    <h2>一、CSS3 简介</h2>
+        <h3>1.CSS3 概述</h3>
+        <h3>2.CSS3私有前缀</h3>
+    <h2>二、CSS3 基本语法</h2>
+        <section>
+            <h3>1. CSS3 新增长度单位</h3>
+            <p>
+                <ul>
+                    <li>rem 根元素字体大小的倍数，只与根元素字体大小有关。</li>
+                    <li>vw 视口宽度的百分之多少 10vw 就是视口宽度的 10% 。</li>
+                    <li>vh 视口高度的百分之多少 10vh 就是视口高度的 10% 。</li>
+                    <li>vmax 视口宽高中大的那个的百分之多少。（了解即可）</li>
+                    <li>vmin 视口宽高中小的那个的百分之多少。（了解即可）</li>
+                </ul>
+            </p>
+            <div>
+                <div class="box">
+                    像素
+                </div>
+                <div class="box-vw">
+                    vw viewport的宽度
+                </div>
+            </div>
+        </section>
+        <section>
+            <h3>2. CSS3 新增颜色设置方式</h3>
+            <p>CSS3 新增了三种颜色设置方式，分别是： rgba 、 hsl 、 hsla。</p>
+        </section>
+        <section>
+            <h3>3. CSS3 新增选择器</h3>
+            <p>CSS3 新增的选择器有：动态伪类、目标伪类、语言伪类、 UI 伪类、结构伪类、否定伪类、伪元素；。</p>
+        </section>
+        <section>
+            <h3>4. CSS3 新增盒模型相关属性</h3>
+            <p></p>
+            <div>
+                <div class="box box-sizing"></div>
+                <div class="box box-resize"></div>
+                <div class="box box-shadow"></div>
+                <div class="box box-opacity">透明</div>
+                <div class="image-opacity">
+                    <img src="./images/你瞅啥.jpg" alt="">
+                    <h2>你瞅啥</h2>
+                </div>
+                <div class="box-background-origin">你好</div>
+                <div class="box-background-clip">你好</div>
+                <div class="box box-background-size">你好</div>
+                <div class="box box-background-multi"></div>
+            </div>
+        </section>
+        <section>
+            <h3>5. CSS3 新增背景属性</h3>
+        </section>
+        <section>
+            <h3>6. CSS3新增边框属性</h3>
+            <div>
+                <div class="box border-radius"></div>
+                <div class="box border-radius-left-bottom"></div>
+            </div>
+        </section>
+        <section>
+            <h3>7. CSS3新增文本属性</h3>
+            <p></p>
+            <div>
+                <h1 class="text-shadow-demo">memory-timer</h1>
+            </div>
+            <div>
+                <p  class="text-box text-box-space">
+                    北风卷地白草折，胡天八月即飞雪。
+                    忽如一夜春风来，千树万树梨花开。
+                    散入珠帘湿罗幕，狐裘不暖锦衾薄。
+                    将军角弓不得控，都护铁衣冷难着。
+                    瀚海阑干百丈冰，愁云惨淡万里凝。
+                    中军置酒饮归客，胡琴琵琶与羌笛。
+                    纷纷暮雪下辕门，风掣红旗冻不翻。
+                    轮台东门送君去，去时雪满天山路。
+                    山回路转不见君，雪上空留马行处。
+                </p>
+            </div>
+            <div>
+                <div class="text-box text-box-overflow">
+                    <ul>
+                        <li>华坪女高无一人考上清北？请让张桂梅走下神坛</li>
+                        <li>蚂蚁集团及旗下机构因何被罚没超71亿元，释放了什么监管信号？</li>
+                        <li>戴金色项链的倪妮，怎么又美出新高度了？</li>
+                        <li>持有核武器50年拒不承认，数量可能比我国还多？联合国调查遭驱赶</li>
+                        <li>德国百年自行车品牌ROSE正式开启线上预订</li>
+                        <li>又是这种鞋！多人中招，再次提醒：非常危险！</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="text-box text-box-decoration">
+                    凄凉宝剑篇，羁泊欲穷年。
+                </div>
+            </div>
+            <div>
+                <div class="text-box text-box-stroke">
+                    红浪漫代指一些“高档”洗浴中心。
+                </div>
+            </div>
+        </section>
+        <section>
+            <h3>8. CSS3 新增渐变</h3>
+            <p>8.1 线性渐变</p>
+            <div style="overflow: hidden;clear: both;">
+                <div class="box-gradient box-linear-gradient">默认情况(从上到下)</div>
+                <div class="box-gradient box-linear-gradient-right">使用关键词设置线性渐变的方向。</div>
+                <div class="box-gradient box-linear-gradient-deg">使用角度设置线性渐变的方向。</div>
+                <div class="box-gradient box-linear-gradient-height">调整开始渐变的位置。</div>
+                <div class="box-gradient box-linear-gradient-font">五彩斑斓的文字</div>
+            </div>
+            <p>8.2 径向渐变</p>
+            <div style="overflow: hidden;clear: both;">
+                <div class="box-gradient box-linear-gradient">默认情况(从上到下)</div>
+                <div class="box-gradient box-linear-gradient-right">使用关键词设置线性渐变的方向。</div>
+                <div class="box-gradient box-linear-gradient-deg">使用角度设置线性渐变的方向。</div>
+                <div class="box-gradient box-linear-gradient-height">调整开始渐变的位置。</div>
+                <div class="box-gradient box-linear-gradient-font">五彩斑斓的文字</div>
+                <div class="box-gradient box-linear-gradient-font">五彩斑斓的文字</div>
+                <div class="box-gradient box-ball"></div>
+            </div>
+            <p>8.3 重复渐变</p>
+            <div>
+                <div class="box-page"></div>
+            </div>
+        </section>
+        <section>
+            <h3>9. web 字体</h3>
+            <p></p>
+            <div>
+
+            </div>
+        </section>
+        <section>
+            <h3>10. 2D变换</h3>
+            <p></p>
+            <div>
+                <div class="transform-outer">
+                    <div class="transform-inner">2D变换</div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h3>11. 3D变换</h3>
+            <p></p>
+            <div>
+        <h3>11. 3D变换</h3>
+                <div class="transform-3d-outer">
+                    <div class="transform-3d-inner"></div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h3>12. 过渡</h3>
+            <p></p>
+            <div>
+                <div class="transition-box"></div>
+                <div class="transition-box-function">
+                    <div class="transition-box-function-item"></div>
+                    <div class="transition-box-function-item"></div>
+                    <div class="transition-box-function-item"></div>
+                    <div class="transition-box-function-item"></div>
+                    <div class="transition-box-function-item"></div>
+                    <div class="transition-box-function-item"></div>
+                    <div class="transition-box-function-item"></div>
+                    <div class="transition-box-function-item"></div>
+                    <div class="transition-box-function-item"></div>
+                    <div class="transition-box-function-item"></div>
+                </div>
+                <div class="transition-box-demo">
+                    <img src="images/shanghai.jpg" alt="">
+                    <div class="mask">上海</div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h3>13. 动画</h3>
+            <p></p>
+            <div>
+                <div class="animation-box">
+                    <div class="animation-box-inner"></div>
+                </div>
+                <div class="animation-demo">
+                    
+                </div>
+            </div>
+        </section>
+        <h3>14. 多列布局</h3>
+        <h3>15.伸缩盒模型</h3>
+        <h3>16. 响应式布局</h3>
+        <h3>17. BFC</h3>
+</body>
+</html>
