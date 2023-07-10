@@ -1,0 +1,25 @@
+.demo-column {
+    width: 1000px;
+    margin: 10px auto;
+    /* 直接指定列数 */
+    column-count: 4;
+    column-gap: 50px;
+    column-rule: 2px double red;
+}
+.demo-column>h2 {
+    column-span: all;
+}
+.demo-column>img,
+.demo-column-img>img
+{
+    width: 100%;
+}
+.demo-column-img {
+    margin: 10px auto;
+    column-count: 5;
+}
+.demo-column-img>img:hover {
+    box-shadow: 0px 0px 20px black;
+    transform: scale(1.05);
+    transition: 0.2s linear;
+}
