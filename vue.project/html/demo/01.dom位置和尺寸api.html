@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html,body {
+            height: 100%;
+            /* overflow: hidden; */
+        }
+        body {
+            width: 3000px;
+            height: 3000px;
+        }
+        #wrap {
+            position: relative;
+        }
+        #inner-2 {
+            position: absolute;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+        }
+        #outer-position {
+            position: relative;
+            left: 50px;
+            top: 100px;
+            background-color: orange;
+        }
+        #inner-position {
+            position: absolute;
+            left: 150px;
+            top: 150px;
+            background-color: tomato;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>获取元素的绝对位置</li>
+    </ul>
+    <!-- offsetleft offsettop -->
+    <div id="wrap">
+        wrap
+        <div class="inner-1" id="inner-1">
+            inner1
+            <div class="inner-2" id="inner-2">
+                inner2
+            </div>
+        </div>
+    </div>
+    <ul class="demo-list">
+        <li>1<a href="javascript:;">删除</a></li>
+        <li>2<a href="javascript:;">删除</a></li>
+        <li>3<a href="javascript:;">删除</a></li>
+        <li>4<a href="javascript:;">删除</a></li>
+        <li>5<a href="javascript:;">删除</a></li>
+        <li>6<a href="javascript:;">删除</a></li>
+        <li>7<a href="javascript:;">删除</a></li>
+    </ul>
+    <div>
+        <div class="box" id="outer-position">
+            <div class="box" id="inner-position"></div>
+        </div>
+
+    </div>
+</body>
+<script type="text/javascript">
+    var inner2 = document.querySelector("#inner-2");
+    //parentNode 直接父级元素
+    console.log(inner2.parentNode.id);
+    //假删除
+    var aNodes = document.querySelectorAll(".demo-list>li>a");
+    for(var i= 0;i<aNodes.length;i++) {
+        aNodes[i].onclick = function() {
+            this.parentNode.style.display="none"
+        }
+    }
+    window.onload=function(){
+        var inner = document.querySelector("#inner-position");
+        var point = getAbPoint(inner);
+        console.log(point)
+
+        function getAbPoint(node){
+            //累加offsetParent 的 offsetTop 和 offsetLeft
+            var x = 0;
+            var y = 0;
+            while(node){
+                x+=node.offsetLeft;
+                y+=node.offsetTop;
+                node = node.offsetParent;
+            }
+            return {x:x,y:y};
+        }
+
+
+    }
+    window.onscroll=function(){
+        //滚动条
+        var L = document.documentElement.scrollLeft||document.body.scrollLeft;
+        var T = document.documentElement.scrollTop||document.body.scrollTop;
+        console.log(L,T);
+    }
+</script>
+</html>

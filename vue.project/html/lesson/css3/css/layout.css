@@ -5,6 +5,30 @@ code {
     background-color: #F4F8F4;
     margin: 1em 0px;
 }
+/* 超小屏幕 */
+@media screen and (max-width:768px) {
+    .container {
+        background-color: rgb(228, 221, 212);
+    }
+}
+/* 中等屏幕 */
+@media screen and (min-width:768px) and (max-width:992px) {
+    .container {
+        background-color: rgb(187, 156, 115);
+    }
+}
+/* 大屏幕 */
+@media screen and (min-width:992px) and (max-width:1200px) {
+    .container {
+        background-color: rgba(48, 46, 45, 0.705);
+    }
+}
+/* 超大屏幕 */
+@media screen and (min-width:1200px) {
+    .container {
+        background-color: rgba(90, 88, 87, 0.705);
+    }
+}
 .tips {
     margin: 20px auto;
     background-color: #F4F8F4;
