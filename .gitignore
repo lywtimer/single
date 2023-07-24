@@ -6,3 +6,6 @@ environment/.idea/
 go.project/go.work.sum
 php.project/vendor/
 php.project/composer.lock
+java.lesson/JavaSECode/.idea/
+java.project/out/
+java.lesson/JavaSECode/out/
