@@ -2,6 +2,7 @@ package com.lywtimer.array;
 
 import com.lywtimer.utils.ArrayTools;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -15,12 +16,35 @@ import java.util.Scanner;
 public class ArrayDemoTest {
 
     public static void main(String[] args) {
-        rectangleNumber();
+        arraysDemo();
         
 
 
     }
+    public static void arraysDemo(){
+        int[] arr1 = {6,9,2,9,1};
+        int[] arr2 = {6,9,2,1,9};
+        int[] arr3 = {6,9,2,1,9};
+        System.out.println(Arrays.equals(arr1, arr2));
+        System.out.println(Arrays.equals(arr2, arr3));
+        System.out.println(Arrays.toString(arr2));
+        System.out.println(arr2 == arr3);
 
+    }
+    public static void bubbleSort(){
+        int[] arr = {6,9,2,9,1};
+        for (int j = 0; j < arr.length -1; j++) {
+            for (int i = 0; i < arr.length - 1 - j; i++) {
+                if (arr[i] > arr[i+1]) {
+                    int temp = arr[i+1];
+                    arr[i + 1] = arr[i];
+                    arr[i] = temp;
+                }
+            }
+        }
+        ArrayTools.printArr(arr);
+
+    }
     public static void student(){
         /*从键盘读入学生成绩，找出最高分，并输出学生成绩等级。
         - 成绩>=最高分-10  等级为’A’
@@ -55,7 +79,6 @@ public class ArrayDemoTest {
         }
         s.close();
     }
-
     public static void defineArr() {
         int[] arr = new int[]{1,2,3,4,5};
         int[] arr1 = new int[3];
@@ -96,7 +119,6 @@ public class ArrayDemoTest {
             System.out.println();
         }
     }
-
     public static void rectangleNumber() {
         System.out.println("输入矩阵的维度");
         Scanner s = new Scanner(System.in);
