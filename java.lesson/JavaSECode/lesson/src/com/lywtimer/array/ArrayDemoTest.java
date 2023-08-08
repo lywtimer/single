@@ -17,9 +17,18 @@ public class ArrayDemoTest {
 
     public static void main(String[] args) {
         arraysDemo();
-        
-
-
+        ArrayTools tool = new ArrayTools();
+        int[] arr = {6, 725, 168,9,2,9,1, 17, 60};
+        ArrayTools.printArr(arr);
+        tool.sort(arr, "asc");
+        ArrayTools.printArr(arr);
+        tool.sort(arr, "desc");
+        ArrayTools.printArr(arr);
+        int a=10;
+        int b=10;
+        ArrayTools.swapOverload(a, b);
+        System.out.println("a="+a);
+        System.out.println("b="+b);
     }
     public static void arraysDemo(){
         int[] arr1 = {6,9,2,9,1};

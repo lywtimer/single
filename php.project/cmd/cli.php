@@ -3,6 +3,23 @@
 
 define('APP_PATH', realpath(dirname(__FILE__)));
 require_once APP_PATH . '/../vendor/autoload.php';
+
+class A {
+    private $a = 20;
+
+    public function info(){
+        return $this->a;
+    }
+}
+class B extends A{
+    private $a = 90;
+
+    public function info(){
+        return $this->a;
+    }
+}
+$obj = new B();
+echo $obj->info();
 //
 //phpinfo();
 echo "hello";
