@@ -9,3 +9,4 @@ php.project/composer.lock
 java.lesson/JavaSECode/.idea/
 java.project/out/
 java.lesson/JavaSECode/out/
+*.properties
